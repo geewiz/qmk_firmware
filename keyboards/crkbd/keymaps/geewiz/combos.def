@@ -1,0 +1,10 @@
+SUBS(COMB_LUUML,   SS_LALT("u")"u",     KC_Z   , KC_U)
+SUBS(COMB_UUUML,   SS_LALT("u")"U",     KC_Z   , KC_L)
+SUBS(COMB_LOUML,   SS_LALT("u")"o",     KC_Z   , KC_O)
+SUBS(COMB_UOUML,   SS_LALT("u")"O",     KC_Z   , KC_I)
+SUBS(COMB_LAUML,   SS_LALT("u")"a",     KC_Z   , KC_A)
+SUBS(COMB_UAUML,   SS_LALT("u")"A",     KC_Z   , KC_R)
+SUBS(COMB_SUML,    SS_LALT("s"),        KC_Z   , KC_S)
+
+COMB(COMB_QUOT,    KC_QUOT,    KC_U   , KC_Y)
+COMB(COMB_DQUO,    KC_DQUO,    KC_COMM, KC_DOT)
