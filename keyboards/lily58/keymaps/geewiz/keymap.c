@@ -19,14 +19,14 @@ extern uint8_t is_master;
 #define _GAME 1
 #define _LOWER 2
 #define _RAISE 3
-#define _FUNCTION 4
+#define _ADJUST 4
 
 #define LY_GAM TG(_GAME)
 #define LY_LWR MO(_LOWER)
 #define LY_RSE MO(_RAISE)
-#define LY_FUN MO(_FUNCTION)
+#define LY_ADJ MO(_ADJUST)
 #define GUI_BSP LGUI_T(KC_BSPC)
-#define RSE_SPC LT(_RAISE, KC_SPC)
+#define LWR_SPC LT(_LOWER, KC_SPC)
 #define CHATUP A(S(KC_UP))
 #define CHATDN A(S(KC_DOWN))
 #define EURO A(S(KC_2))
@@ -73,9 +73,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|                  |------+------+------+------+------+------|
  * |EscCTL|   A  |   S  |   D  |   F  |   G  |------.    ,------|   H  |   J  |   K  |   L  |   ;  |  "   |
  * |------+------+------+------+------+------| Macro|    |Macro |------+------+------+------+------+------|
- * | LSFT |   Z  |   X  |   C  |   V  |   B  |------|    |------|   N  |   M  |   ,  |   .  |   /  |  Fn  |
+ * | LSFT |   Z  |   X  |   C  |   V  |   B  |------|    |------|   N  |   M  |   ,  |   .  |   /  |Enter |
  * `-----------------------------------------/      |    \      \-----------------------------------------'
- *                   |      | LOPT | LGUI | /  Del /      \Enter \  |RAISE |LOWER |      |
+ *                   |      | LOPT | LGUI | /  Del /      \Enter \  |LOWER |RAISE |      |
  *                   |      |      | BSpc |/      /        \      \ |Space |      |      |
  *                   `-------------------''------'          '------''--------------------'
  */
@@ -83,8 +83,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_ESC , KC_1   , KC_2   , KC_3   , KC_4   , KC_5   ,                   KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , KC_LEAD, \
   TAB_HYP, KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,                   KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , KC_DEL , \
   ESC_CTL, KC_A   , KC_S   , KC_D   , KC_F   , KC_G   ,                   KC_H   , KC_J   , KC_K   , KC_L   , KC_SCLN, KC_QUOT, \
-  OSLSFT , KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , MAC1   , MAC1   , KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, LY_FUN , \
-                             XXXXXXX, KC_LOPT, GUI_BSP, KC_DEL , KC_ENT , RSE_SPC, LY_LWR , XXXXXXX \
+  OSLSFT , KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , MAC1   , MAC1   , KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, KC_ENT , \
+                             XXXXXXX, KC_LOPT, GUI_BSP, KC_DEL , KC_ENT , LWR_SPC, LY_RSE , XXXXXXX \
 ),
 /* GAME
  * ,-----------------------------------------.                  ,-----------------------------------------.
@@ -107,26 +107,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_LSFT, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
                              _______, KC_LOPT, KC_LGUI, KC_SPC , _______, _______, _______, _______ \
 ),
-/* LOWER - Numbers, Function keys
+/* LOWER - Numbers, Navigation
  * ,-----------------------------------------.                  ,-----------------------------------------.
  * |      |      |      |      |      |      |                  |      |      |      |      |      |      |
  * |------+------+------+------+------+------|                  |------+------+------+------+------+------|
- * |      |   *  |   7  |   8  |   9  |   /  |                  |      |  F9  | F10  | F11  | F12  | Del  |
+ * |      |   *  |   7  |   8  |   9  |   /  |                  |      | Home |  Up  | End  | PgUp | Del  |
  * |------+------+------+------+------+------|                  |------+------+------+------+------+------|
- * |      |   -  |   4  |   5  |   6  |   0  |------.    ,------|      |  F5  |  F6  |  F7  |  F8  | DelW |
+ * |      |   -  |   4  |   5  |   6  |   0  |------.    ,------|      | Left | Down | Rght | PgDn | DelW |
  * |------+------+------+------+------+------|      |    |      |------+------+------+------+------+------|
- * |      |   +  |   1  |   2  |   3  |   .  |------|    |------|      |  F1  |  F2  |  F3  |  F4  |      |
+ * |      |   +  |   1  |   2  |   3  |   .  |------|    |------|      |      |      |      |      |      |
  * `-----------------------------------------/      |    \      \-----------------------------------------'
- *                   |      |      |      | /      /      \      \  |      |  ^^  |      |
+ *                   |      |      |      | /      /      \      \  |  ^^  |ADJUST|      |
  *                   |      |      |      |/      /        \      \ |      |      |      |
  *                   `-------------------''------'          '------''--------------------'
  */
 [_LOWER] = LAYOUT( \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-  _______, KC_ASTR, KC_7   , KC_8   , KC_9   , KC_SLSH,                   XXXXXXX, KC_F9  , KC_F10 , KC_F11 , KC_F12 , KC_DEL , \
-  _______, KC_MINS, KC_4   , KC_5   , KC_6   , KC_0   ,                   XXXXXXX, KC_F5  , KC_F6  , KC_F7  , KC_F8  , DELWRD , \
-  _______, KC_PLUS, KC_1   , KC_2   , KC_3   , KC_DOT , XXXXXXX, XXXXXXX, XXXXXXX, KC_F1  , KC_F2  , KC_F3  , KC_F4  , _______, \
-                             _______, _______, _______, _______, _______, _______, _______, _______ \
+  _______, KC_ASTR, KC_7   , KC_8   , KC_9   , KC_SLSH,                   XXXXXXX, KC_HOME, KC_UP  , KC_END , KC_PGUP, KC_DEL , \
+  _______, KC_MINS, KC_4   , KC_5   , KC_6   , KC_0   ,                   XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, DELWRD , \
+  _______, KC_PLUS, KC_1   , KC_2   , KC_3   , KC_DOT , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, \
+                             _______, _______, _______, _______, _______, _______, LY_ADJ , _______ \
 ),
 /* RAISE - Symbols
  * ,-----------------------------------------.                  ,-----------------------------------------.
@@ -138,7 +138,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|      |    |      |------+------+------+------+------+------|
  * |      |   %  |   ^  |   [  |   ]  |   ~  |------|    |------|  &   |  =   |  ,   |  .   |  \   |      |
  * `-----------------------------------------/      |    \      \-----------------------------------------'
- *                   |      |      |      | /      /      \      \  |  ^^  |ADJUST|      |
+ *                   |      |      |      | /      /      \      \  |ADJUST|  ^^  |      |
  *                   |      |      |      |/      /        \      \ |      |      |      |
  *                   `-------------------''------'          '------''--------------------'
  */
@@ -147,7 +147,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   XXXXXXX, KC_EXLM, KC_AT  , KC_LCBR, KC_RCBR, KC_PIPE,                   EURO   , KC_UNDS, KC_SCLN, KC_COLN, XXXXXXX, XXXXXXX, \
   _______, KC_HASH, KC_DLR,  KC_LPRN, KC_RPRN, KC_GRV ,                   KC_PLUS, KC_MINS, KC_SLSH, KC_ASTR, XXXXXXX, XXXXXXX, \
   _______, KC_PERC, KC_CIRC, KC_LBRC, KC_RBRC, KC_TILD, XXXXXXX, XXXXXXX, KC_AMPR, KC_EQL , KC_COMM, KC_DOT , KC_BSLS, _______, \
-                             _______, _______, _______, _______, _______, _______, _______, _______ \
+                             _______, _______, _______, _______, _______, LY_ADJ , _______, _______ \
 ),
 /* FUNCTION
  * ,-----------------------------------------.                    ,-----------------------------------------.
@@ -157,17 +157,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |      | Vol- | Mute | Vol+ |      |      |-------.    ,-------|      | PgDn | Left | Down | Rght | Game |
  * |------+------+------+------+------+------|  MacS |    | MacF  |------+------+------+------+------+------|
- * |  ^^  | Prev | Play | Next |      |      |-------|    |-------|      |      |      |      |      |  ^^  |
+ * |      | Prev | Play | Next |      |      |-------|    |-------|      |      |      |      |      |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   |      |      |      | /       /       \Reset \  |      |      |      |
+ *                   |      |      |      | /       /       \Reset \  |  ^^  |  ^^  |      |
  *                   |      |      |      |/       /         \      \ |      |      |      |
  *                   `-------------------''-------'           '------''--------------------'
  */
-  [_FUNCTION] = LAYOUT( \
+  [_ADJUST] = LAYOUT( \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_PGUP, KC_HOME, KC_UP  , KC_END , XXXXXXX, \
   XXXXXXX, VOLDN  , VOLUP  , MUTE   , XXXXXXX, XXXXXXX,                   XXXXXXX, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, LY_GAM , \
-  _______, PREV   , NEXT   , PLAY   , XXXXXXX, XXXXXXX, RMAC1  , RMACS  , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,\
+  XXXXXXX, PREV   , NEXT   , PLAY   , XXXXXXX, XXXXXXX, RMAC1  , RMACS  , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
                              _______, _______, _______, _______, RESET  , _______, _______, _______ \
   ),
 };
