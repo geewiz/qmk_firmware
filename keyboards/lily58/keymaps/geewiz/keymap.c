@@ -17,16 +17,44 @@ extern uint8_t is_master;
 
 #define _DEFAULT 0
 #define _GAME 1
-#define _LOWER 2
-#define _RAISE 3
-#define _ADJUST 4
+#define _NAV 2
+#define _SYM 3
+#define _NUM 4
+#define _ADJUST 5
 
+// Layers
 #define LY_GAM TG(_GAME)
-#define LY_LWR MO(_LOWER)
-#define LY_RSE MO(_RAISE)
+#define LY_NAV MO(_NAV)
+#define BSP_NAV LT(_NAV, KC_BSPC)
+#define LY_SYM MO(_SYM)
+#define SPC_SYM LT(_SYM, KC_SPC)
+#define LY_NUM MO(_NUM)
+#define ESC_NUM LT(_NUM, KC_ESC)
 #define LY_ADJ MO(_ADJUST)
-#define GUI_BSP LGUI_T(KC_BSPC)
-#define LWR_SPC LT(_LOWER, KC_SPC)
+
+// Mod-tap
+#define BSP_GUI LGUI_T(KC_BSPC)
+#define DEL_HYP HYPR_T(KC_DEL)
+#define ESC_CTL LCTL_T(KC_ESC)
+#define E_GUI LGUI_T(KC_E)
+#define S_CTL LCTL_T(KC_S)
+#define D_SFT LSFT_T(KC_D)
+#define F_ALT LALT_T(KC_F)
+#define I_GUI LGUI_T(KC_I)
+#define L_CTL LCTL_T(KC_L)
+#define K_SFT LSFT_T(KC_K)
+#define J_ALT LALT_T(KC_J)
+#define N4_CTL LCTL_T(KC_4)
+#define N5_SFT LSFT_T(KC_5)
+#define N6_ALT LALT_T(KC_6)
+#define PRV_CTL LCTL_T(KC_MPRV)
+#define PLY_SFT LSFT_T(KC_MPLY)
+#define NXT_ALT LALT_T(KC_MNXT)
+#define STP_GUI LGUI_T(KC_MSTP)
+
+// Abbreviations
+#define OSLSFT OSM(MOD_LSFT)
+#define OSRSFT OSM(MOD_RSFT)
 #define CHATUP A(S(KC_UP))
 #define CHATDN A(S(KC_DOWN))
 #define EURO A(S(KC_2))
@@ -35,17 +63,11 @@ extern uint8_t is_master;
 #define PASTE LCMD(KC_V)
 #define UNDO LCMD(KC_Z)
 #define DELWRD A(KC_BSPC)
-#define OSLSFT OSM(MOD_LSFT)
-#define OSRSFT OSM(MOD_RSFT)
-#define ESC_GUI LGUI_T(KC_ESC)
-#define ESC_CTL LCTL_T(KC_ESC)
-#define Z_CTL LCTL_T(KC_Z)
-#define SLS_CTL LCTL_T(KC_SLSH)
-#define TAB_HYP HYPR_T(KC_TAB)
 #define VOLUP KC__VOLUP
 #define VOLDN KC__VOLDOWN
 #define MUTE KC__MUTE
 #define PLAY KC_MPLY
+#define STOP KC_MSTP
 #define NEXT KC_MNXT
 #define PREV KC_MPRV
 #define APP1 A(KC_F1)
@@ -58,6 +80,8 @@ extern uint8_t is_master;
 #define APP8 A(KC_F8)
 #define APP9 A(KC_F9)
 #define APP10 A(KC_F10)
+
+// Dynamic macros
 #define MAC1 DYN_MACRO_PLAY1
 #define MAC2 DYN_MACRO_PLAY2
 #define RMAC1 DYN_REC_START1
@@ -71,103 +95,124 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|                  |------+------+------+------+------+------|
  * |TabHYP|   Q  |   W  |   E  |   R  |   T  |                  |   Y  |   U  |   I  |   O  |   P  | Del  |
  * |------+------+------+------+------+------|                  |------+------+------+------+------+------|
- * |EscCTL|   A  |   S  |   D  |   F  |   G  |------.    ,------|   H  |   J  |   K  |   L  |   ;  |  "   |
+ * |  CTL |   A  |   S  |   D  |   F  |   G  |------.    ,------|   H  |   J  |   K  |   L  |   ;  |  "   |
  * |------+------+------+------+------+------| Macro|    |Macro |------+------+------+------+------+------|
- * | LSFT |   Z  |   X  |   C  |   V  |   B  |------|    |------|   N  |   M  |   ,  |   .  |   /  |Enter |
+ * |  SFT |   Z  |   X  |   C  |   V  |   B  |------|    |------|   N  |   M  |   ,  |   .  |   /  |Enter |
  * `-----------------------------------------/      |    \      \-----------------------------------------'
- *                   |      | LOPT | LGUI | /  Del /      \Enter \  |LOWER |RAISE |      |
- *                   |      |      | BSpc |/      /        \      \ |Space |      |      |
+ *                   |      |  Esc | Bspc | /  Tab /      \Enter \  | Spc  | Del  |      |
+ *                   |      |  NUM |  NAV |/      /        \      \ | SYM  | HYPR |      |
  *                   `-------------------''------'          '------''--------------------'
  */
  [_DEFAULT] = LAYOUT( \
   KC_ESC , KC_1   , KC_2   , KC_3   , KC_4   , KC_5   ,                   KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , KC_LEAD, \
-  TAB_HYP, KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,                   KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , KC_DEL , \
-  ESC_CTL, KC_A   , KC_S   , KC_D   , KC_F   , KC_G   ,                   KC_H   , KC_J   , KC_K   , KC_L   , KC_SCLN, KC_QUOT, \
+  KC_TAB , KC_Q   , KC_W   , E_GUI  , KC_R   , KC_T   ,                   KC_Y   , KC_U   , I_GUI  , KC_O   , KC_P   , KC_DEL , \
+  ESC_CTL, KC_A   , S_CTL  , D_SFT  , F_ALT  , KC_G   ,                   KC_H   , J_ALT  , K_SFT  , L_CTL  , KC_SCLN, KC_QUOT, \
   OSLSFT , KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , MAC1   , MAC1   , KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, KC_ENT , \
-                             XXXXXXX, KC_LOPT, GUI_BSP, KC_DEL , KC_ENT , LWR_SPC, LY_RSE , XXXXXXX \
+                             XXXXXXX, ESC_NUM, BSP_NAV, KC_TAB , KC_ENT , SPC_SYM, DEL_HYP, XXXXXXX \
 ),
 /* GAME
  * ,-----------------------------------------.                  ,-----------------------------------------.
- * |  Esc |      |      |      |      |      |                  |      |      |      |      |      |      |
+ * |  Esc |   1  |   2  |   3  |   4  |   5  |                  |  6   |  7   |  8   |  9   |  0   | Bspc |
  * |------+------+------+------+------+------|                  |------+------+------+------+------+------|
- * |  Tab |      |      |      |      |      |                  |      |      |      |      |      | BSpc |
+ * |  Tab |   Q  |   W  |   E  |   R  |   T  |                  |  Y   |  U   |  I   |  O   |  P   | Del  |
  * |------+------+------+------+------+------|                  |------+------+------+------+------+------|
- * | LCTL |      |      |      |      |      |------.    ,------|      |      |      |      |      |      |
+ * | LCTL |   A  |   S  |   D  |   F  |   G  |------.    ,------|  H   |  J   |  K   |  L   |  ;   |  '   |
  * |------+------+------+------+------+------|      |    |      |------+------+------+------+------+------|
- * | LSFT |      |      |      |      |      |------|    |------|      |      |      |      |      |  ^^  |
+ * | LSFT |   Z  |   X  |   C  |   V  |   B  |------|    |------|  N   |  M   |  ,   |  .   |  ?   | Ent  |
  * `-----------------------------------------/      |    \      \-----------------------------------------'
- *                   |      | LOPT | LGUI | / Space/      \      \  |      |      |      |
+ *                   |      | LOPT | LGUI | / Space/      \Enter \  | NAV  | DFLT |      |
  *                   |      |      |      |/      /        \      \ |      |      |      |
  *                   `-------------------''------'          '------''--------------------'
  */
  [_GAME] = LAYOUT( \
-  KC_ESC , _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______, \
-  KC_TAB , _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, KC_BSPC, \
-  KC_LCTL, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______, \
-  KC_LSFT, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
-                             _______, KC_LOPT, KC_LGUI, KC_SPC , _______, _______, _______, _______ \
+  KC_ESC , KC_1   , KC_2   , KC_3   , KC_4   , KC_5   ,                   KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , KC_BSPC, \
+  KC_TAB , KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,                   KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , KC_DEL , \
+  KC_LCTL, KC_A   , KC_S   , KC_D   , KC_F   , KC_G   ,                   KC_H   , KC_J   , KC_K   , KC_L   , KC_SCLN, KC_QUOT, \
+  KC_LSFT, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , _______, _______, KC_N   , KC_M   , KC_COMM, KC_DOT , KC_QUES, KC_ENT , \
+                             _______, KC_LOPT, KC_LGUI, KC_SPC , KC_ENT , LY_NAV , LY_GAM , _______ \
 ),
-/* LOWER - Numbers, Navigation
+/* Navigation & media
  * ,-----------------------------------------.                  ,-----------------------------------------.
  * |      |      |      |      |      |      |                  |      |      |      |      |      |      |
  * |------+------+------+------+------+------|                  |------+------+------+------+------+------|
- * |      |   *  |   7  |   8  |   9  |   /  |                  |      | Home |  Up  | End  | PgUp | Del  |
+ * |      |      |      | Stop |      |      |                  |      | PgUp |  Up  | PgDn |      | Del  |
  * |------+------+------+------+------+------|                  |------+------+------+------+------+------|
- * |      |   -  |   4  |   5  |   6  |   0  |------.    ,------|      | Left | Down | Rght | PgDn | DelW |
+ * |      |      | Prev | Play | Next |      |------.    ,------| Home | Left | Down | Rght | End  | DelW |
  * |------+------+------+------+------+------|      |    |      |------+------+------+------+------+------|
- * |      |   +  |   1  |   2  |   3  |   .  |------|    |------|      |      |      |      |      |      |
+ * |      |      | Vol- | Mute | Vol+ |      |------|    |------|      |      |      |      |      |      |
  * `-----------------------------------------/      |    \      \-----------------------------------------'
- *                   |      |      |      | /      /      \      \  |  ^^  |ADJUST|      |
+ *                   |      |      |   ^^ | /  Esc /      \ Tab  \  | ADJ  |      |      |
  *                   |      |      |      |/      /        \      \ |      |      |      |
  *                   `-------------------''------'          '------''--------------------'
  */
-[_LOWER] = LAYOUT( \
+[_NAV] = LAYOUT( \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-  _______, KC_ASTR, KC_7   , KC_8   , KC_9   , KC_SLSH,                   XXXXXXX, KC_HOME, KC_UP  , KC_END , KC_PGUP, KC_DEL , \
-  _______, KC_MINS, KC_4   , KC_5   , KC_6   , KC_0   ,                   XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, DELWRD , \
-  _______, KC_PLUS, KC_1   , KC_2   , KC_3   , KC_DOT , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, \
-                             _______, _______, _______, _______, _______, _______, LY_ADJ , _______ \
+  _______, XXXXXXX, XXXXXXX, STP_GUI, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_PGUP, KC_UP  , KC_PGDN, XXXXXXX, KC_DEL , \
+  _______, XXXXXXX, PRV_CTL, PLY_SFT, NXT_ALT, XXXXXXX,                   KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END , DELWRD , \
+  _______, XXXXXXX, KC_VOLU, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, \
+                             _______, _______, _______, KC_ESC , KC_TAB , LY_ADJ , XXXXXXX, _______ \
 ),
-/* RAISE - Symbols
+/* Symbols
  * ,-----------------------------------------.                  ,-----------------------------------------.
  * |      |      |      |      |      |      |                  |      |      |      |      |      |      |
  * |------+------+------+------+------+------|                  |------+------+------+------+------+------|
- * |      |   !  |   @  |   {  |   }  |   |  |                  | EUR  |  _   |  ;   |  :   |      |      |
+ * |      |   ~  |   {  |   }  |   +  |   *  |                  |  =   |  $   |  &   |  |   | BSpc |      |
  * |------+------+------+------+------+------|                  |------+------+------+------+------+------|
- * |      |   #  |   $  |   (  |   )  |   `  |------.    ,------|  +   |  -   |  /   |  *   |      |      |
+ * |      |   `  |   (  |   )  |   -  |   /  |------.    ,------|  \   |  "   |  ;   |  :   |  %   |      |
  * |------+------+------+------+------+------|      |    |      |------+------+------+------+------+------|
- * |      |   %  |   ^  |   [  |   ]  |   ~  |------|    |------|  &   |  =   |  ,   |  .   |  \   |      |
+ * |      |   €  |   [  |   ]  |   _  |   !  |------|    |------|  ?   |  '   |  #   |  @   |  ^   |      |
  * `-----------------------------------------/      |    \      \-----------------------------------------'
- *                   |      |      |      | /      /      \      \  |ADJUST|  ^^  |      |
+ *                   |      |      |  ADJ | /  Esc /      \      \  |  ^^  |      |      |
  *                   |      |      |      |/      /        \      \ |      |      |      |
  *                   `-------------------''------'          '------''--------------------'
  */
-[_RAISE] = LAYOUT( \
+[_SYM] = LAYOUT( \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-  XXXXXXX, KC_EXLM, KC_AT  , KC_LCBR, KC_RCBR, KC_PIPE,                   EURO   , KC_UNDS, KC_SCLN, KC_COLN, XXXXXXX, XXXXXXX, \
-  _______, KC_HASH, KC_DLR,  KC_LPRN, KC_RPRN, KC_GRV ,                   KC_PLUS, KC_MINS, KC_SLSH, KC_ASTR, XXXXXXX, XXXXXXX, \
-  _______, KC_PERC, KC_CIRC, KC_LBRC, KC_RBRC, KC_TILD, XXXXXXX, XXXXXXX, KC_AMPR, KC_EQL , KC_COMM, KC_DOT , KC_BSLS, _______, \
-                             _______, _______, _______, _______, _______, LY_ADJ , _______, _______ \
+  XXXXXXX, KC_TILD, KC_LCBR, KC_RCBR, KC_PLUS, KC_ASTR,                   KC_EQL , KC_DLR , KC_AMPR, KC_PIPE, KC_BSPC, XXXXXXX, \
+  _______, KC_GRV , KC_LPRN, KC_RPRN, KC_MINS, KC_SLSH,                   KC_BSLS, KC_DQUO, KC_SCLN, KC_COLN, KC_PERC, XXXXXXX, \
+  _______, EURO   , KC_LBRC, KC_RBRC, KC_UNDS, KC_EXLM, XXXXXXX, XXXXXXX, KC_QUES, KC_QUOT, KC_HASH, KC_AT  , KC_CIRC, _______, \
+                             _______, _______, LY_ADJ , KC_ESC , _______, _______, _______, _______ \
 ),
-/* FUNCTION
+/* NUM - Numbers
+ * ,-----------------------------------------.                  ,-----------------------------------------.
+ * |      |      |      |      |      |      |                  |      |      |      |      |      |      |
+ * |------+------+------+------+------+------|                  |------+------+------+------+------+------|
+ * |      |      |      |  GUI |      |      |                  |  /   |  7   |  8   |  9   | BSpc |      |
+ * |------+------+------+------+------+------|                  |------+------+------+------+------+------|
+ * |      |      |  CTL |  SFT |  ALT |      |------.    ,------|  -   |  4   |  5   |  6   |  +   |      |
+ * |------+------+------+------+------+------|      |    |      |------+------+------+------+------+------|
+ * |      |      |      |      |      |      |------|    |------|  *   |  1   |  2   |  3   | Ent  |      |
+ * `-----------------------------------------/      |    \      \-----------------------------------------'
+ *                   |      |      |      | /  Esc /      \      \  |  0   |  .   |      |
+ *                   |      |      |      |/      /        \      \ |      |      |      |
+ *                   `-------------------''------'          '------''--------------------'
+ */
+[_NUM] = LAYOUT( \
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, \
+  _______, XXXXXXX, XXXXXXX, KC_LGUI, XXXXXXX, XXXXXXX,                   KC_SLSH, KC_7   , KC_8   , KC_9   , KC_BSPC, _______, \
+  _______, XXXXXXX, KC_LCTL, KC_LSFT, KC_LALT, XXXXXXX,                   KC_MINS, KC_4   , KC_5   , KC_6   , KC_PLUS, _______, \
+  _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_ASTR, KC_1   , KC_2   , KC_3   , KC_ENT , _______, \
+                             _______, _______, _______, KC_ESC , _______, KC_0   , KC_DOT , _______ \
+),
+/* ADJUST
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      |      |      |      |      |                    |      | PgUp | Home |  Up  | End  |      |
+ * | Reset |      |      |      |      |      |                    |      |  F9  | F10  | F11  | F12 |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      | Vol- | Mute | Vol+ |      |      |-------.    ,-------|      | PgDn | Left | Down | Rght | Game |
+ * |      | Vol- | Mute | Vol+ |      |      |-------.    ,-------|      |  F5  |  F6  |  F7  |  F8  | Game |
  * |------+------+------+------+------+------|  MacS |    | MacF  |------+------+------+------+------+------|
- * |      | Prev | Play | Next |      |      |-------|    |-------|      |      |      |      |      |      |
+ * |      | Prev | Play | Next |      |      |-------|    |-------|      |  F1  |  F2  |  F3  |  F4  |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   |      |      |      | /       /       \Reset \  |  ^^  |  ^^  |      |
+ *                   |      |      |      | /       /       \Reset \  |      |      |      |
  *                   |      |      |      |/       /         \      \ |      |      |      |
  *                   `-------------------''-------'           '------''--------------------'
  */
   [_ADJUST] = LAYOUT( \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_PGUP, KC_HOME, KC_UP  , KC_END , XXXXXXX, \
-  XXXXXXX, VOLDN  , VOLUP  , MUTE   , XXXXXXX, XXXXXXX,                   XXXXXXX, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, LY_GAM , \
-  XXXXXXX, PREV   , NEXT   , PLAY   , XXXXXXX, XXXXXXX, RMAC1  , RMACS  , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
+  RESET  , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_F9  , KC_F10 , KC_F11 , KC_F12 , XXXXXXX, \
+  XXXXXXX, VOLDN  , VOLUP  , MUTE   , XXXXXXX, XXXXXXX,                   XXXXXXX, KC_F5  , KC_F6  , KC_F7  , KC_F8  , LY_GAM , \
+  XXXXXXX, PREV   , NEXT   , PLAY   , XXXXXXX, XXXXXXX, RMAC1  , RMACS  , XXXXXXX, KC_F1  , KC_F2  , KC_F3  , KC_F4  , XXXXXXX,\
                              _______, _______, _______, _______, RESET  , _______, _______, _______ \
   ),
 };
