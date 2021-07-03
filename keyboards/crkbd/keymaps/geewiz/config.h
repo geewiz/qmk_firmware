@@ -22,6 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define USE_SERIAL_PD2
 #define EE_HANDS
+//#define MASTER_LEFT
 
 #ifdef RGB_MATRIX_ENABLE
 #	define RGB_MATRIX_KEYPRESSES
