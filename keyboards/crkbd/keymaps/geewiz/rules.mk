@@ -37,7 +37,6 @@ BOOTMAGIC_ENABLE = lite
 
 # OLED displays
 OLED_DRIVER_ENABLE = yes
-WPM_ENABLE = yes
 
 # RGB light
 RGB_MATRIX_ENABLE = no
