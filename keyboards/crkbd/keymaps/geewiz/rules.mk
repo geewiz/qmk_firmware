@@ -3,10 +3,42 @@ BOOTLOADER = atmel-dfu # Elite-C MCU
 VPATH += keyboards/gboards/
 SRC += process_records.c
 SRC += smart_caps.c
+SRC += mod-status.c
+SRC += bongocat.c
 
-COMBO_ENABLE = no           # Key combos
-LEADER_ENABLE = no          # Leader key
-RGBLIGHT_ENABLE     = yes   # Enable WS2812 RGB underlight.
-OLED_DRIVER_ENABLE  = yes
+# Disable unused features
+VIA_ENABLE = no
+WPM_ENABLE = no
+NKRO_ENABLE = no
+AUDIO_ENABLE = no
+STENO_ENABLE = no
+LEADER_ENABLE = no
+UNICODE_ENABLE = no
+CONSOLE_ENABLE = no
+COMMAND_ENABLE = no
+MOUSEKEY_ENABLE = no
+TERMINAL_ENABLE = no
+KEY_LOCK_ENABLE = no
+RGBLIGHT_ENABLE = no
+BOOTMAGIC_ENABLE = no
+SLEEP_LED_ENABLE = no
+TAP_DANCE_ENABLE = no
+VELOCIKEY_ENABLE = no
+SWAP_HANDS_ENABLE = no
+RGB_MATRIX_ENABLE = no
+SPACE_CADET_ENABLE = no
+COMBO_ENABLE = no
+LEADER_ENABLE = no
+
+# Enabled features
+LTO_ENABLE = yes
 EXTRAKEY_ENABLE = yes
-LTO_ENABLE          = yes
+BOOTMAGIC_ENABLE = lite
+
+# OLED displays
+OLED_DRIVER_ENABLE = yes
+WPM_ENABLE = yes
+
+# RGB light
+RGB_MATRIX_ENABLE = no
+RGBLIGHT_ENABLE = yes
