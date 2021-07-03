@@ -7,7 +7,6 @@ enum layer_names {
   _GAME,
   _NAV,
   _SYM,
-  _NUM,
   _ADJUST
 };
 
@@ -16,7 +15,6 @@ enum keycodes {
   GAME,
   NAV,
   SYM,
-  NUM,
   ADJUST,
   BACKLIT,
   RGBRST,
@@ -32,14 +30,13 @@ enum macro_keycodes {
 // Layer switching
 #define LY_NAV MO(_NAV)
 #define LY_SYM MO(_SYM)
-#define LY_NUM MO(_NUM)
 #define LY_ADJ MO(_ADJUST)
 #define LY_GAME TG(_GAME)
 
 // Thumb keys
 #define LTHUMB1 KC_TAB
 #define LTHUMB2 LT(_NAV, KC_BSPC)
-#define LTHUMB3 LT(_NUM, KC_ESC)
+#define LTHUMB3 KC_ESC
 #define RTHUMB1 KC_ENT
 #define RTHUMB2 LT(_SYM, KC_SPC)
 #define RTHUMB3 KC_F19
@@ -47,7 +44,7 @@ enum macro_keycodes {
 // Thumb keys GAME
 #define LTHUMG1 KC_LALT
 #define LTHUMG2 LT(_NAV, KC_SPC)
-#define LTHUMG3 LT(_NUM, KC_ESC)
+#define LTHUMG3 KC_ESC
 #define RTHUMG1 KC_ENT
 #define RTHUMG2 LT(_SYM, KC_SPC)
 #define RTHUMG3 KC_DEL
