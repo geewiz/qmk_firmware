@@ -53,3 +53,4 @@ enum macro_keycodes {
 #define OSLSFT OSM(MOD_LSFT)
 #define OSRSFT OSM(MOD_RSFT)
 #define DEL_HYP HYPR_T(KC_DEL)
+#define ESC_CTL LCTL_T(KC_ESC)
