@@ -49,36 +49,7 @@ enum macro_keycodes {
 #define RTHUMG2 LT(_SYM, KC_SPC)
 #define RTHUMG3 KC_DEL
 
-// Left side home row mods
-#define HM_A LCTL_T(KC_A)
-#define HM_S LALT_T(KC_S)
-#define HM_D LGUI_T(KC_D)
-#define HM_F LSFT_T(KC_F)
-// Right side home row mods
-#define HM_SCLN RCTL_T(KC_SCLN)
-#define HM_L RALT_T(KC_L)
-#define HM_K RGUI_T(KC_K)
-#define HM_J RSFT_T(KC_J)
-// Left side NAV layer mods
-#define F5_CTL LCTL_T(KC_F5)
-#define F6_ALT LALT_T(KC_F6)
-#define F7_GUI LGUI_T(KC_F7)
-#define F8_SFT LSFT_T(KC_F8)
-
-#define DEL_HYP HYPR_T(KC_DEL)
-
 // Abbreviations
 #define OSLSFT OSM(MOD_LSFT)
 #define OSRSFT OSM(MOD_RSFT)
-#define CMDLEFT LCMD(KC_LEFT)
-#define ALTLEFT A(KC_LEFT)
-#define ALTRGHT A(KC_RGHT)
-#define CMDRGHT LCMD(KC_RGHT)
-#define CHATUP A(S(KC_UP))
-#define CHATDN A(S(KC_DOWN))
-#define EURO A(S(KC_2))
-#define CUT LCMD(KC_X)
-#define COPY LCMD(KC_C)
-#define PASTE LCMD(KC_V)
-#define UNDO LCMD(KC_Z)
-#define DELWRD A(KC_BSPC)
+#define DEL_HYP HYPR_T(KC_DEL)
