@@ -76,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       _______, KC_GRV , KC_LPRN, KC_RPRN, KC_MINS, KC_SLSH,                      KC_BSLS, KC_DQUO, KC_SCLN, KC_COLN, KC_PERC, _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, EURO   , KC_LBRC, KC_RBRC, KC_UNDS, KC_EXLM,                      KC_QUES, KC_QUOT, KC_HASH, KC_AT  , KC_CIRC, _______,\
+      _______, XXXXXXX, KC_LBRC, KC_RBRC, KC_UNDS, KC_EXLM,                      KC_QUES, KC_QUOT, KC_HASH, KC_AT  , KC_CIRC, _______,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           _______, LY_ADJ , _______,    _______, _______, _______ \
                                       //`--------------------------'  `--------------------------'
@@ -98,15 +98,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // TAPPING_FORCE_HOLD_PER_KEY
 bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case HM_A:
-        case HM_S:
-        case HM_D:
-        case HM_F:
-        case HM_J:
-        case HM_K:
-        case HM_L:
-        case HM_SCLN:
-            return true;
         default:
             return false;
     }
