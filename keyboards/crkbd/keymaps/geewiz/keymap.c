@@ -56,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       //`--------------------------'  `--------------------------'
   ),
 
-  [_NAV] = LAYOUT_split_3x6_3( \
+  [_LOWER] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       _______, KC_1   , KC_2   , KC_3   , KC_4   , KC_5   ,                      KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , KC_DEL ,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -68,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       //`--------------------------'  `--------------------------'
   ),
 
-  [_SYM] = LAYOUT_split_3x6_3( \
+  [_RAISE] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       _______, KC_TILD, KC_LCBR, KC_RCBR, KC_PLUS, KC_ASTR,                      KC_EQL , KC_DLR , KC_AMPR, KC_PIPE, XXXXXXX, _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -110,8 +110,10 @@ void matrix_scan_user(void) {
         leading = false;
         leader_end();
 
-        SEQ_ONE_KEY(KC_Q) { SEND_STRING(":wq"); }
-        SEQ_ONE_KEY(KC_W) { SEND_STRING(":w"); }
+        SEQ_ONE_KEY(KC_A) { SEND_STRING("\"a"); }
+        SEQ_ONE_KEY(KC_O) { SEND_STRING("\"o"); }
+        SEQ_ONE_KEY(KC_U) { SEND_STRING("\"u"); }
+        SEQ_ONE_KEY(KC_S) { SEND_STRING(SS_RALT("s")); }
     }
 }
 #endif
