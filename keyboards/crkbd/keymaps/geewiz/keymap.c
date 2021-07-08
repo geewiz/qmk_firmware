@@ -38,11 +38,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       ESC_CTL, KC_A   , KC_S   , KC_D   , KC_F   , KC_G   ,                      KC_H   , KC_J   , KC_K   , KC_L   , KC_SCLN, KC_QUOT,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      OSLSFT , KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   ,                      KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, KC_ENT ,\
+      OSLSFT , KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   ,                      KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, KC_LEAD,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           LTHUMB3, LTHUMB2, LTHUMB1,    RTHUMB1, RTHUMB2, RTHUMB3 \
                                       //`--------------------------'  `--------------------------'
-
   ),
 
   [_GAME] = LAYOUT_split_3x6_3( \
@@ -55,20 +54,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           LTHUMG3, LTHUMG2, LTHUMG1,    RTHUMG1, RTHUMG2, RTHUMG3 \
                                       //`--------------------------'  `--------------------------'
-
   ),
 
   [_NAV] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      _______, KC_1   , KC_2   , KC_3   , KC_4   , KC_5   ,                      KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , _______,\
+      _______, KC_1   , KC_2   , KC_3   , KC_4   , KC_5   ,                      KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , KC_DEL ,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       _______, KC_F5  , KC_F6  , KC_F7  , KC_F8  , KC_SMCL,                      KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, XXXXXXX, _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       _______, KC_F1  , KC_F2  , KC_F3  , KC_F4  , XXXXXXX,                      KC_HOME, KC_PGDN, KC_PGUP, KC_END , XXXXXXX, _______,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          _______, _______, _______,    _______, LY_ADJ , KC_DEL  \
+                                          _______, _______, _______,    _______, LY_ADJ , _______ \
                                       //`--------------------------'  `--------------------------'
-    ),
+  ),
 
   [_SYM] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -90,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX, XXXXXXX,                      XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          LTHUMB3, _______, LTHUMB1,    RTHUMB1, _______, RTHUMB3 \
+                                          _______, _______, _______,    _______, _______, _______ \
                                       //`--------------------------'  `--------------------------'
   )
 };
@@ -112,28 +110,8 @@ void matrix_scan_user(void) {
         leading = false;
         leader_end();
 
-        /* Copy & Paste, Undo */
-        SEQ_ONE_KEY(KC_Z) { SEND_STRING(SS_LGUI("z")); }
-        SEQ_ONE_KEY(KC_X) { SEND_STRING(SS_LGUI("x")); }
-        SEQ_ONE_KEY(KC_C) { SEND_STRING(SS_LGUI("c")); }
-        SEQ_ONE_KEY(KC_V) { SEND_STRING(SS_LGUI("v")); }
-
-        /* 1Password */
-        SEQ_ONE_KEY(KC_P) { SEND_STRING(SS_LGUI("\\")); }
-
-        /* Boilerplate text */
-        SEQ_TWO_KEYS(KC_M, KC_P) { SEND_STRING("jochen@lillich.co"); }
-        SEQ_TWO_KEYS(KC_M, KC_W) { SEND_STRING("jochen@freistil.it"); }
-
-        /* Coding */
-        SEQ_ONE_KEY(KC_T) { SEND_STRING(SS_LCTL("`")); }
-
-        /* Emoji */
-        SEQ_TWO_KEYS(KC_E, KC_S) { SEND_STRING("🙂"); }
-        SEQ_TWO_KEYS(KC_E, KC_G) { SEND_STRING("😁"); }
-        SEQ_TWO_KEYS(KC_E, KC_T) { SEND_STRING("🤔"); }
-        SEQ_TWO_KEYS(KC_E, KC_W) { SEND_STRING("👋"); }
-        SEQ_TWO_KEYS(KC_E, KC_F) { SEND_STRING("🙁"); }
+        SEQ_ONE_KEY(KC_Q) { SEND_STRING(":wq"); }
+        SEQ_ONE_KEY(KC_W) { SEND_STRING(":w"); }
     }
 }
 #endif
