@@ -36,10 +36,10 @@ enum macro_keycodes {
 // Thumb keys
 #define LTHUMB1 KC_TAB
 #define LTHUMB2 LT(_NAV, KC_BSPC)
-#define LTHUMB3 LGUI_T(KC_ESC)
+#define LTHUMB3 LALT_T(KC_ESC)
 #define RTHUMB1 KC_ENT
 #define RTHUMB2 LT(_SYM, KC_SPC)
-#define RTHUMB3 LALT_T(KC_DEL)
+#define RTHUMB3 RGUI_T(KC_DEL)
 
 // Thumb keys GAME
 #define LTHUMG1 KC_SPC
@@ -52,5 +52,6 @@ enum macro_keycodes {
 // Abbreviations
 #define OSLSFT OSM(MOD_LSFT)
 #define OSRSFT OSM(MOD_RSFT)
+#define OSLCTL OSM(MOD_LCTL)
 #define DEL_HYP HYPR_T(KC_DEL)
 #define ESC_CTL LCTL_T(KC_ESC)
