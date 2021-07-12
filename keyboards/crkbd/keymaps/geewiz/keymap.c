@@ -58,11 +58,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_LOWER] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      _______, KC_1   , KC_2   , KC_3   , KC_4   , KC_5   ,                      KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , KC_DEL ,\
+      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, KC_HOME, KC_UP  , KC_END , XXXXXXX, KC_DEL ,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, KC_F5  , KC_F6  , KC_F7  , KC_F8  , KC_SMCL,                      KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, XXXXXXX, _______,\
+      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_SMCL,                      XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, KC_F1  , KC_F2  , KC_F3  , KC_F4  , XXXXXXX,                      KC_HOME, KC_PGDN, KC_PGUP, KC_END , XXXXXXX, _______,\
+      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, KC_PGUP, XXXXXXX, KC_PGDN, XXXXXXX, _______,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           _______, _______, _______,    _______, LY_ADJ , _______ \
                                       //`--------------------------'  `--------------------------'
@@ -70,11 +70,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_RAISE] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      _______, KC_TILD, KC_LCBR, KC_RCBR, KC_PLUS, KC_ASTR,                      KC_EQL , KC_DLR , KC_AMPR, KC_PIPE, XXXXXXX, _______,\
+      _______, KC_TILD, KC_LCBR, KC_RCBR, XXXXXXX, KC_PIPE,                      KC_PLUS, KC_7   , KC_8   , KC_9   , XXXXXXX, _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, KC_GRV , KC_LPRN, KC_RPRN, KC_MINS, KC_SLSH,                      KC_BSLS, KC_DQUO, KC_SCLN, KC_COLN, KC_PERC, _______,\
+      _______, KC_GRV , KC_LPRN, KC_RPRN, XXXXXXX, KC_BSLS,                      KC_MINS, KC_4   , KC_5   , KC_6   , XXXXXXX, _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, XXXXXXX, KC_LBRC, KC_RBRC, KC_UNDS, KC_EXLM,                      KC_QUES, KC_QUOT, KC_HASH, KC_AT  , KC_CIRC, _______,\
+      _______, KC_BSLS, KC_LBRC, KC_RBRC, XXXXXXX, XXXXXXX,                      KC_0   , KC_1   , KC_2   , KC_3   , XXXXXXX, _______,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           _______, LY_ADJ , _______,    _______, _______, _______ \
                                       //`--------------------------'  `--------------------------'
