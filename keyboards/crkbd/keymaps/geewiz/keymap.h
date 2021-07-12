@@ -49,9 +49,4 @@ enum macro_keycodes {
 #define RTHUMG2 LT(_RAISE, KC_SPC)
 #define RTHUMG3 KC_DEL
 
-// Abbreviations
-#define OSLSFT OSM(MOD_LSFT)
-#define OSRSFT OSM(MOD_RSFT)
-#define OSLCTL OSM(MOD_LCTL)
-#define DEL_HYP HYPR_T(KC_DEL)
-#define ESC_CTL LCTL_T(KC_ESC)
+#include "../../../users/geewiz/keysyms.h"
