@@ -1,0 +1,8 @@
+// Abbreviations
+#define OSLSFT OSM(MOD_LSFT)
+#define OSRSFT OSM(MOD_RSFT)
+#define OSLCTL OSM(MOD_LCTL)
+#define DEL_HYP HYPR_T(KC_DEL)
+#define ESC_CTL LCTL_T(KC_ESC)
+#define CHTUNXT LSFT(LALT(KC_DOWN))
+#define CHTUPRV LSFT(LALT(KC_UP))
