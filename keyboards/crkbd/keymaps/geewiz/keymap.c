@@ -101,19 +101,4 @@ bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
-// Leader key
-#if defined(LEADER_ENABLE)
-LEADER_EXTERNS();
-
-void matrix_scan_user(void) {
-    LEADER_DICTIONARY() {
-        leading = false;
-        leader_end();
-
-        SEQ_ONE_KEY(KC_A) { SEND_STRING("\"a"); }
-        SEQ_ONE_KEY(KC_O) { SEND_STRING("\"o"); }
-        SEQ_ONE_KEY(KC_U) { SEND_STRING("\"u"); }
-        SEQ_ONE_KEY(KC_S) { SEND_STRING(SS_RALT("s")); }
-    }
-}
-#endif
+#include "../../../users/geewiz/leader.c"
