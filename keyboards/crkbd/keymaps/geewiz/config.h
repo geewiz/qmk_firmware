@@ -99,10 +99,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // Configure the global tapping term (default: 200ms)
 #define TAPPING_TERM 180
-// Prevent normal rollover on alphas from accidentally triggering mods.
-#define IGNORE_MOD_TAP_INTERRUPT
-// Allow holding a key as mod after tapping it
-#define TAPPING_FORCE_HOLD_PER_KEY
 
 /* Key combos */
 #define COMBO_TERM 50
@@ -113,6 +109,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // Leader key
 #define LEADER_TIMEOUT 350
-#define LEADER_PER_KEY_TIMING
 
 #define MEDIA_KEY_DELAY 10

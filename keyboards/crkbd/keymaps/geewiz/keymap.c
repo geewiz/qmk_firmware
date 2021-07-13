@@ -74,7 +74,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       _______, KC_GRV , KC_LPRN, KC_RPRN, XXXXXXX, KC_BSLS,                      KC_MINS, KC_4   , KC_5   , KC_6   , XXXXXXX, _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, KC_BSLS, KC_LBRC, KC_RBRC, XXXXXXX, XXXXXXX,                      KC_0   , KC_1   , KC_2   , KC_3   , XXXXXXX, _______,\
+      _______, XXXXXXX, KC_LBRC, KC_RBRC, XXXXXXX, XXXXXXX,                      KC_0   , KC_1   , KC_2   , KC_3   , XXXXXXX, _______,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           _______, LY_ADJ , _______,    _______, _______, _______ \
                                       //`--------------------------'  `--------------------------'
@@ -92,13 +92,5 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       //`--------------------------'  `--------------------------'
   )
 };
-
-// TAPPING_FORCE_HOLD_PER_KEY
-bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        default:
-            return false;
-    }
-}
 
 #include "../../../users/geewiz/leader.c"
