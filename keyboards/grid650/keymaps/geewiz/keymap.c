@@ -61,18 +61,6 @@ enum my_keycodes {
   ORANGE
 };
 
-#ifdef LED_DEBUG
-enum LED_STAT{
-  RED_BLINK,
-  WHITE_BREATHING,
-  WHITE_ON,  
-  BLE_ON,
-  ORANGE_ON  
-};
-
-void set_status_led(enum LED_STAT led_stat,enum LED_STAT current_stat);
-#endif
-
 // USB keymap for user
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Base */
@@ -94,150 +82,61 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 };
 
-// uint8_t white_led = 1;
+//uint8_t white_led = 1;
 uint8_t orange_led = 1;
 uint8_t red_led = 1;
 uint8_t ble_led = 1;
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    #ifdef LED_DEBUG
-    static enum LED_STAT current_stat = WHITE_BREATHING;
-    #endif
-
     switch (keycode) {
-        // case LED_RED:
-        //     if (record->event.pressed) {
-        //         // Do something when pressed
-        //         PORTB |= (1 << 0);
-        //     } else {
-        //         // Do something else when release
-        //     }
-        //     return true; 
-        // case KC_E:
-        //     if (record->event.pressed) {
-        //         // Do something when pressed
-        //         PORTB &= ~(1 << 0);
-        //     } else {
-        //         // Do something else when release
-        //     }
-        //     return true; 
-        #ifdef LED_DEBUG
-        case ORANGE:
-        if (record->event.pressed) {                
-            set_status_led(ORANGE_ON,current_stat);
-            current_stat = ORANGE_ON;
-            // xprintf("current stat = %d\n",current_stat);
-
-        } else {
-            // Do something else when release
-        }
-            return true;
-        case BREATHING:
-        if (record->event.pressed) {
-            set_status_led(WHITE_BREATHING,current_stat);
-            current_stat = WHITE_BREATHING;
-            // xprintf("current stat = %d\n",current_stat);
-        } else {
-            // Do something else when release
-        }
-            return true;    
-        case ON:
-        if (record->event.pressed) {
-            set_status_led(WHITE_ON,current_stat);
-            current_stat = WHITE_ON;
-            // xprintf("current stat = %d\n",current_stat);
-        } else {
-            // Do something else when release
-        }
-            return true;    
-        case RED:
-        if (record->event.pressed) {
-            set_status_led(RED_BLINK,current_stat);
-            current_stat = RED_BLINK;
-            // xprintf("current stat = %d\n",current_stat);
-        } else {
-            // Do something else when release
-        }
-            return true; 
-        case BLUE:
-        if (record->event.pressed) {
-            set_status_led(BLE_ON,current_stat);
-            current_stat = BLE_ON;
-            // xprintf("current stat = %d\n",current_stat);
-        } else {
-            // Do something else when release
-        }
-            return true;     
-        #endif            
-        
         case BLE_PWR_OFF:
-        if (record->event.pressed) {
-            
-            //BLE_PWR(PD5) LOW
-            PORTD &= ~(1<<5);
+            if (record->event.pressed) {
+                //BLE_PWR(PD5) LOW
+                PORTD &= ~(1<<5);
 
-            //BLE_OE(PD2) HIGH
-            PORTD |= (1<<2);
+                //BLE_OE(PD2) HIGH
+                PORTD |= (1<<2);
 
-            //DFU_MCU(PC6) HIGH
-            // PORTC |= 1 << 6;   //set high
-            
-        } else {
-            // Do something else when release
-        }
+                //DFU_MCU(PC6) HIGH
+                // PORTC |= 1 << 6;   //set high
+            } else {
+                // Do something else when release
+            }
             return true;      
+
         case BLE_PWR_ON:
-        if (record->event.pressed) {
-            
-            //BLE_PWR(PD5) HIGH
-            // PORTD &= ~(1<<5);
-            PORTD |= (1<<5);
-
-            //BLE_OE(PD2) LOW
-            // PORTD |= (1<<2);
-            PORTD &= ~(1<<2);
-
-            //DFU_MCU(PC6) HIGH
-            // PORTC |= 1 << 6;   //set high
+            if (record->event.pressed) {
                 
-        } else {
-            // Do something else when release
-        }
+                //BLE_PWR(PD5) HIGH
+                // PORTD &= ~(1<<5);
+                PORTD |= (1<<5);
+
+                //BLE_OE(PD2) LOW
+                // PORTD |= (1<<2);
+                PORTD &= ~(1<<2);
+
+                //DFU_MCU(PC6) HIGH
+                // PORTC |= 1 << 6;   //set high
+                    
+            } else {
+                // Do something else when release
+            }
             return true;         
+
         case BLE_DFU:
-        if (record->event.pressed) {
-            //DFU_MCU(PC6) HIGH
-            PORTC |= 1 << 6;   //set high
-              
-        } else {
-            // Do something else when release
-            //DFU_MCU(PC6) LOW
-            PORTC &= ~(1 << 6);   //set high
-        }
+            if (record->event.pressed) {
+                //DFU_MCU(PC6) HIGH
+                PORTC |= 1 << 6;   //set high
+                  
+            } else {
+                // Do something else when release
+                //DFU_MCU(PC6) LOW
+                PORTC &= ~(1 << 6);   //set high
+            }
             return true; 
-        // case KC_ENTER:
-        //     // Play a tone when enter is pressed
-        //     if (record->event.pressed) {
-        //         PLAY_NOTE_ARRAY(tone_qwerty);
-        //     }
-        //     return true; // Let QMK send the enter press/release events
         default:
             return true; // Process all other keycodes normally
     }
 }
-
-/*
-void matrix_init_user(void) {
-
-}
-
-void matrix_scan_user(void) {
-
-}
-
-bool led_update_user(led_t led_state) {
-    return true;
-}
-*/
 
 #include "../../../users/geewiz/leader.c"
