@@ -6,3 +6,10 @@
 #define ESC_CTL LCTL_T(KC_ESC)
 #define CHTUNXT LSFT(LALT(KC_DOWN))
 #define CHTUPRV LSFT(LALT(KC_UP))
+
+// Dynamic macros
+#define MAC1 DYN_MACRO_PLAY1
+#define MAC2 DYN_MACRO_PLAY2
+#define RMAC1 DYN_REC_START1
+#define RMAC2 DYN_REC_START2
+#define RMACS DYN_REC_STOP
