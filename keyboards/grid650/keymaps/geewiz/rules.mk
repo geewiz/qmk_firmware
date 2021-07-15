@@ -40,33 +40,31 @@ QUANTUM_LIB_SRC += i2c_master.c
 # Interrupt driven control endpoint task(+60)
 OPT_DEFS += -DINTERRUPT_CONTROL_ENDPOINT
 
+DEBOUNCE_TYPE = eager_pr
+CUSTOM_MATRIX = yes
+
 # Build Options
 #   change yes to no to disable
 #
-BOOTMAGIC_ENABLE = lite       # Virtual DIP switch configuration
-MOUSEKEY_ENABLE = yes       # Mouse keys
-EXTRAKEY_ENABLE = yes       # Audio control and System control
-CONSOLE_ENABLE = no        # Console for debug test
-COMMAND_ENABLE = no        # Commands for debug and configuration
-# Do not enable SLEEP_LED_ENABLE. it uses the same timer as BACKLIGHT_ENABLE
-SLEEP_LED_ENABLE = no       # Breathing sleep LED during USB suspend
-# if this doesn't work, see here: https://github.com/tmk/tmk_keyboard/wiki/FAQ#nkro-doesnt-work
-NKRO_ENABLE = no            # USB Nkey Rollover
-
-BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality test
-# BACKLIGHT_DRIVER = pwm # test
-# BACKLIGHT_DRIVER = software
-
 RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 MIDI_ENABLE = no            # MIDI support
 BLUETOOTH_ENABLE = no       # Enable Bluetooth with the Adafruit EZ-Key HID
 # BLUETOOTH = AdafruitBLE       # Enable Bluetooth with the Adafruit EZ-Key HID
-AUDIO_ENABLE = no           # Audio output
+# Do not enable SLEEP_LED_ENABLE. it uses the same timer as BACKLIGHT_ENABLE
+SLEEP_LED_ENABLE = no       # Breathing sleep LED during USB suspend
+CONSOLE_ENABLE = no        # Console for debug test
+COMMAND_ENABLE = no        # Commands for debug and configuration
+# if this doesn't work, see here: https://github.com/tmk/tmk_keyboard/wiki/FAQ#nkro-doesnt-work
+NKRO_ENABLE = no            # USB Nkey Rollover
+BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality test
+# BACKLIGHT_DRIVER = pwm # test
+# BACKLIGHT_DRIVER = software
+VIA_ENABLE = no
 FAUXCLICKY_ENABLE = no      # Use buzzer to emulate clicky switches
+AUDIO_ENABLE = no           # Audio output
 HD44780_ENABLE = no         # Enable support for HD44780 based LCDs
 
-DEBOUNCE_TYPE = eager_pr
-CUSTOM_MATRIX    = yes
-
-VIA_ENABLE = no
+BOOTMAGIC_ENABLE = lite
+MOUSEKEY_ENABLE = yes
+EXTRAKEY_ENABLE = yes
 LEADER_ENABLE = yes
