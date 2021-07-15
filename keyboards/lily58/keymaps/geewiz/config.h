@@ -45,17 +45,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGBLIGHT_SLEEP
 */
 
-// Configure the global tapping term (default: 200ms)
-#define TAPPING_TERM 180
-// Prevent normal rollover on alphas from accidentally triggering mods.
-#define IGNORE_MOD_TAP_INTERRUPT
-// Allow holding a key as mod after tapping it
-#define TAPPING_FORCE_HOLD_PER_KEY
-
-/* Key combos */
-#define COMBO_TERM 50
-#define COMBO_VARIABLE_LEN
-
-#define LEADER_TIMEOUT 350
-
-#define MEDIA_KEY_DELAY 10
+#include "../../../users/geewiz/config.h"
