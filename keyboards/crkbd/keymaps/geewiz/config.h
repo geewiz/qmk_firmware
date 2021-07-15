@@ -97,17 +97,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define OLED_FONT_H "keyboards/crkbd/keymaps/geewiz/oledfont.c"
 #endif
 
-// Configure the global tapping term (default: 200ms)
-#define TAPPING_TERM 180
-
-/* Key combos */
-#define COMBO_TERM 50
-#define COMBO_VARIABLE_LEN
-
-// Time (in ms) before one shot keys are released
-#define ONESHOT_TIMEOUT 5000
-
-// Leader key
-#define LEADER_TIMEOUT 350
-
-#define MEDIA_KEY_DELAY 10
+// My individual settings shared between keyboards
+#include "../../../users/geewiz/config.h"
