@@ -31,7 +31,7 @@ enum macro_keycodes {
 #define LY_LWR MO(_LOWER)
 #define LY_RSE MO(_RAISE)
 #define LY_ADJ MO(_ADJUST)
-#define LY_GAME TG(_GAME)
+#define LY_GAM TG(_GAME)
 
 // Thumb keys
 #define LTHUMB1 KC_TAB
