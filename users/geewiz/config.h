@@ -12,6 +12,6 @@
 #define ONESHOT_TIMEOUT 5000
 
 // Leader key
-#define LEADER_TIMEOUT 350
+#define LEADER_TIMEOUT 500
 
 #define MEDIA_KEY_DELAY 10
