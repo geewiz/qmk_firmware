@@ -40,7 +40,7 @@ QUANTUM_LIB_SRC += i2c_master.c
 # Interrupt driven control endpoint task(+60)
 OPT_DEFS += -DINTERRUPT_CONTROL_ENDPOINT
 
-DEBOUNCE_TYPE = eager_pr
+DEBOUNCE_TYPE = sym_eager_pr
 CUSTOM_MATRIX = yes
 
 # Build Options
