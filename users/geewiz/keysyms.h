@@ -1,4 +1,8 @@
 // Abbreviations
+#define CTL_Z LCTL(KC_Z)
+#define CTL_X LCTL(KC_X)
+#define CTL_C LCTL(KC_C)
+#define CTL_V LCTL(KC_V)
 #define OSLSFT OSM(MOD_LSFT)
 #define OSRSFT OSM(MOD_RSFT)
 #define OSLCTL OSM(MOD_LCTL)
