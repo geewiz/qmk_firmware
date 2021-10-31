@@ -2,7 +2,11 @@
 #pragma once
 
 // Configure the global tapping term (default: 200ms)
-#define TAPPING_TERM 180
+#define TAPPING_TERM 200
+// Prevent normal rollover on alphas from accidentally triggering mods.
+#define IGNORE_MOD_TAP_INTERRUPT
+// Allow holding a key as mod after tapping it
+// #define TAPPING_FORCE_HOLD
 
 /* Key combos */
 #define COMBO_TERM 50
