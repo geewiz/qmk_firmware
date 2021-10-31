@@ -49,15 +49,14 @@ enum macro_keycodes {
 #define RTHUMG2 LT(_RAISE, KC_SPC)
 #define RTHUMG3 KC_DEL
 
-// Left side home row mods
-#define HM_A LGUI_T(KC_A)
-#define HM_S LALT_T(KC_S)
-#define HM_D LCTL_T(KC_D)
-#define HM_F LSFT_T(KC_F)
-// Right side home row mods
-#define HM_SCLN RGUI_T(KC_SCLN)
-#define HM_L    RALT_T(KC_L)
-#define HM_K    RCTL_T(KC_K)
-#define HM_J    RSFT_T(KC_J)
+// Default layer home row mods
+#define DH_A    LGUI_T(KC_A)
+#define DH_S    LALT_T(KC_S)
+#define DH_D    LCTL_T(KC_D)
+#define DH_F    LSFT_T(KC_F)
+#define DH_SCLN RGUI_T(KC_SCLN)
+#define DH_L    RALT_T(KC_L)
+#define DH_K    RCTL_T(KC_K)
+#define DH_J    RSFT_T(KC_J)
 
 #include "../../../users/geewiz/keysyms.h"
