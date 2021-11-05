@@ -36,10 +36,10 @@ enum macro_keycodes {
 // Thumb keys
 #define LTHUMB1 KC_TAB
 #define LTHUMB2 LT(_LOWER, KC_BSPC)
-#define LTHUMB3 LGUI_T(KC_ESC)
+#define LTHUMB3 KC_ESC
 #define RTHUMB1 KC_ENT
 #define RTHUMB2 LT(_RAISE, KC_SPC)
-#define RTHUMB3 LALT_T(KC_DEL)
+#define RTHUMB3 KC_DEL
 
 // Thumb keys GAME
 #define LTHUMG1 KC_SPC
