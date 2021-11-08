@@ -1,3 +1,13 @@
+// Default layer home row mods
+#define DH_A    LGUI_T(KC_A)
+#define DH_S    LALT_T(KC_S)
+#define DH_D    LCTL_T(KC_D)
+#define DH_F    LSFT_T(KC_F)
+#define DH_SCLN RGUI_T(KC_SCLN)
+#define DH_L    RALT_T(KC_L)
+#define DH_K    RCTL_T(KC_K)
+#define DH_J    RSFT_T(KC_J)
+
 // Abbreviations
 #define CTL_Z LCTL(KC_Z)
 #define CTL_X LCTL(KC_X)
