@@ -23,9 +23,9 @@ enum keycodes {
 // Thumb keys
 #define LTHUMB1 KC_TAB
 #define LTHUMB2 LT(_NAV, KC_BSPC)
-#define LTHUMB3 LALT_T(KC_ESC)
+#define LTHUMB3 KC_ESC
 #define RTHUMB1 KC_ENT
 #define RTHUMB2 LT(_SYM, KC_SPC)
-#define RTHUMB3 RGUI_T(KC_DEL)
+#define RTHUMB3 KC_DEL
 
 #include "../../../users/geewiz/keysyms.h"
