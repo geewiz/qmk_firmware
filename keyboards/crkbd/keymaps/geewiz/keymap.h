@@ -35,18 +35,18 @@ enum macro_keycodes {
 
 // Thumb keys
 #define LTHUMB1 KC_TAB
-#define LTHUMB2 LT(_LOWER, KC_BSPC)
+#define LTHUMB2 LT(_LOWER, KC_SPC)
 #define LTHUMB3 KC_ESC
 #define RTHUMB1 KC_ENT
-#define RTHUMB2 LT(_RAISE, KC_SPC)
+#define RTHUMB2 LT(_RAISE, KC_BSPC)
 #define RTHUMB3 KC_DEL
 
 // Thumb keys GAME
-#define LTHUMG1 KC_SPC
-#define LTHUMG2 LT(_LOWER, KC_TAB)
+#define LTHUMG1 KC_TAB
+#define LTHUMG2 LT(_LOWER, KC_SPC)
 #define LTHUMG3 LALT_T(KC_ESC)
 #define RTHUMG1 KC_ENT
-#define RTHUMG2 LT(_RAISE, KC_SPC)
+#define RTHUMG2 LT(_RAISE, KC_BSPC)
 #define RTHUMG3 KC_DEL
 
 #include "../../../users/geewiz/keysyms.h"
