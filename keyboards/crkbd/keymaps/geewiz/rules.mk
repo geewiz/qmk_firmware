@@ -1,10 +1,6 @@
 BOOTLOADER = atmel-dfu # Elite-C MCU
 
 VPATH += keyboards/gboards/
-SRC += process_records.c
-SRC += smart_caps.c
-SRC += mod-status.c
-SRC += bongocat.c
 
 # Disable unused features
 AUDIO_ENABLE = no
@@ -32,13 +28,17 @@ WPM_ENABLE = no
 
 # Enabled features
 LTO_ENABLE = yes
+SPLIT_KEYBOARD = yes
 EXTRAKEY_ENABLE = yes
 BOOTMAGIC_ENABLE = lite
 LEADER_ENABLE = yes
+AUTO_SHIFT_ENABLE = yes
 
 # OLED displays
-OLED_DRIVER_ENABLE = yes
+OLED_ENABLE = yes
+OLED_DRIVER = SSD1306
+BONGOCAT_ENABLE = no
 
 # RGB light
-RGB_MATRIX_ENABLE = no
-RGBLIGHT_ENABLE = yes
+RGB_MATRIX_ENABLE = yes
+RGBLIGHT_ENABLE = no
