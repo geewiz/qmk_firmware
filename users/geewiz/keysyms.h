@@ -4,6 +4,7 @@
 #define DH_D    LCTL_T(KC_D)
 #define DH_F    LSFT_T(KC_F)
 #define DH_SCLN RGUI_T(KC_SCLN)
+#define DH_QUOT RGUI_T(KC_QUOT)
 #define DH_L    RALT_T(KC_L)
 #define DH_K    RCTL_T(KC_K)
 #define DH_J    RSFT_T(KC_J)
