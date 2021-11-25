@@ -8,6 +8,13 @@
 #define DH_K    RCTL_T(KC_K)
 #define DH_J    RSFT_T(KC_J)
 
+// Windows functions
+#define U_RDO LCTL(KC_Y)
+#define U_PST LCTL(KC_V)
+#define U_CPY LCTL(KC_C)
+#define U_CUT LCTL(KC_X)
+#define U_UND LCTL(KC_Z)
+
 // Abbreviations
 #define CTL_Z LCTL(KC_Z)
 #define CTL_X LCTL(KC_X)

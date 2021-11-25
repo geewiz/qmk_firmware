@@ -18,7 +18,7 @@ enum keycodes {
   ADJUST,
   BACKLIT,
   RGBRST,
-  KC_SMCL, // Smart caps lock
+  U_SMCL, // Smart caps lock
 };
 
 enum macro_keycodes {
