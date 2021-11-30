@@ -3,29 +3,30 @@
 #include QMK_KEYBOARD_H
 
 enum layer_names {
-  _DEFAULT,
-  _NAV,
-  _SYM,
-  _ADJUST
+  _DFLT,
+  _NAVI,
+  _NUMB,
+  _SYMB,
+  _FUNC
 };
 
 enum keycodes {
-    KC_SMCL = SAFE_RANGE, // Smart caps lock
+    U_SMCL = SAFE_RANGE, // Smart caps lock
 };
 
 #define _______ KC_TRNS
 
 // Layer switching
-#define LY_NAV MO(_NAV)
-#define LY_SYM MO(_SYM)
-#define LY_ADJ MO(_ADJUST)
+#define LY_NAVI MO(_NAVI)
+#define LY_SYMB MO(_SYMB)
+#define LY_FUNC MO(_FUNC)
 
 // Thumb keys
 #define LTHUMB1 KC_TAB
-#define LTHUMB2 LT(_NAV, KC_BSPC)
+#define LTHUMB2 LT(_NAVI, KC_SPC)
 #define LTHUMB3 KC_ESC
-#define RTHUMB1 KC_ENT
-#define RTHUMB2 LT(_SYM, KC_SPC)
-#define RTHUMB3 KC_DEL
+#define RTHUMB1 LT(_SYMB, KC_ENT)
+#define RTHUMB2 LT(_NUMB, KC_BSPC)
+#define RTHUMB3 LT(_FUNC, KC_DEL)
 
 #include "../../../users/geewiz/keysyms.h"
