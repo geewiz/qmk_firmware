@@ -35,7 +35,7 @@ bool process_smart_caps(uint16_t keycode, keyrecord_t *record) {
                 keycode = keycode & 0xFF;
         }
         switch (keycode) {
-            case KC_SMCL:
+            case U_SMCL:
                 if (record->event.pressed) {
                     toggle_smart_caps();
                 }

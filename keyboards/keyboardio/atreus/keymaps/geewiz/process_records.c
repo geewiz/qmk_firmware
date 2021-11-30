@@ -5,7 +5,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     const bool pressed = record->event.pressed;
 
     switch (keycode) {
-        case KC_SMCL:
+        case U_SMCL:
             if (pressed) return false;
             toggle_smart_caps();
             return false;
