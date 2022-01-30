@@ -1,5 +1,5 @@
 #include "keymap.h"
-#include "smart_caps.h"
+#include "../../../users/geewiz/smart_caps.h"
 
 void persistent_default_layer_set(uint16_t default_layer) {
   eeconfig_update_default_layer(default_layer);
@@ -14,7 +14,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   const bool pressed = record->event.pressed;
 
 #ifdef OLED_ENABLE // Reset typing timer for OLED animation
-  if (record->event.pressed) { tap_timer = timer_read32(); }
+  if (pressed) { tap_timer = timer_read32(); }
 #endif
 
   switch (keycode) {

@@ -1,5 +1,3 @@
-#include "keymap.h"
-
 void toggle_smart_caps(void);
 void enable_smart_caps(void);
 void disable_smart_caps(void);

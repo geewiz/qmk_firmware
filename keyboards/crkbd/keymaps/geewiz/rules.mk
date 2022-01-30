@@ -42,3 +42,5 @@ BONGOCAT_ENABLE = no
 # RGB light
 RGB_MATRIX_ENABLE = yes
 RGBLIGHT_ENABLE = no
+
+SRC += ../../../../users/geewiz/smart_caps.c
