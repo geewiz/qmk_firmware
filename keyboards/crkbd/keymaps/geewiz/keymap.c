@@ -111,5 +111,4 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #include "g/keymap_combo.h" // to make combo def dictionary work
 #endif
 
-#include "smart_caps.c"
 #include "../../../users/geewiz/leader.c"

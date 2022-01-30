@@ -1,6 +1,7 @@
 #include QMK_KEYBOARD_H
 #include <stdbool.h>
 #include "smart_caps.h"
+#include "keysyms.h"
 
 /* Based on work from @dnaq and @iaap on the splitkb.com Discord. */
 

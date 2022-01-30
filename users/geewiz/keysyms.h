@@ -1,3 +1,10 @@
+#pragma once
+
+enum keycodes {
+  DEFAULT = SAFE_RANGE,
+  U_SMCL, // Smart caps lock
+};
+
 // Default layer home row mods
 #define DH_A    LGUI_T(KC_A)
 #define DH_S    LALT_T(KC_S)

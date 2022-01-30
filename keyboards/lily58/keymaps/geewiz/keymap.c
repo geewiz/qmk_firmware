@@ -1,4 +1,5 @@
 #include "keymap.h"
+#include "../../../users/geewiz/smart_caps.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  [_DEFAULT] = LAYOUT( \
@@ -33,7 +34,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* |--------+--------+--------+--------+--------+--------|                   |--------+--------+--------+--------+--------+--------| */
      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_DEL , \
 /* |--------+--------+--------+--------+--------+--------|                   |--------+--------+--------+--------+--------+--------| */
-     _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_CAPS,                     KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, KC_TAB , _______, \
+     _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, U_SMCL ,                     KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, KC_TAB , _______, \
 /* |--------+--------+--------+--------+--------+--------|--------. .--------|--------+--------+--------+--------+--------+--------| */
      _______, CTL_Z  , CTL_X  , CTL_C  , CTL_V  , XXXXXXX, XXXXXXX,   XXXXXXX, KC_HOME, KC_PGDN, KC_PGUP, KC_END , XXXXXXX, _______, \
 /* |--------+--------+--------+--------+--------+--------/-------/   \-------\--------+--------+--------+--------+--------+--------| */
@@ -50,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* |--------+--------+--------+--------+--------+--------|--------. .--------|--------+--------+--------+--------+--------+--------| */
      _______, KC_CIRC, KC_HASH, KC_LBRC, KC_LBRC, KC_TILD, KC_GRV ,   KC_BSLS, KC_AMPR, KC_LBRC, KC_RBRC, KC_PERC, KC_DLR , _______, \
 /* |--------+--------+--------+--------+--------+--------/-------/   \-------\--------+--------+--------+--------+--------+--------| */
-                              _______, _______, _______, _______,       _______, _______, _______, _______ \
+                              _______, _______, LY_ADJ , _______,       _______, _______, _______, _______ \
 /*                          |--------+--------+--------|--------/     \--------|--------+--------+--------|                          */
 ),
   [_ADJUST] = LAYOUT( \
@@ -105,13 +106,25 @@ void oled_task_user(void) {
 #endif // OLED_DRIVER_ENABLE
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  if (record->event.pressed) {
+  const bool pressed = record->event.pressed;
+
+  if (pressed) {
 #ifdef OLED_DRIVER_ENABLE
     set_keylog(keycode, record);
 #endif
     // set_timelog();
   }
+
+  switch (keycode) {
+    case U_SMCL:
+      if (pressed) return false;
+      toggle_smart_caps();
+      return false;
+  }
+
+  if (!process_smart_caps(keycode, record)) {
+      return false;
+  }
+
   return true;
 }
-
-#include "../../../users/geewiz/config.h"

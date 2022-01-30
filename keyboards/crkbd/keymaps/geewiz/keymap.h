@@ -1,6 +1,7 @@
 #pragma once
 
 #include QMK_KEYBOARD_H
+#include "../../../../users/geewiz/keysyms.h"
 
 enum layer_names {
   _DFLT,
@@ -9,11 +10,6 @@ enum layer_names {
   _NUMB,
   _SYMB,
   _FUNC
-};
-
-enum keycodes {
-  DEFAULT = SAFE_RANGE,
-  U_SMCL, // Smart caps lock
 };
 
 enum macro_keycodes {
@@ -43,5 +39,3 @@ enum macro_keycodes {
 #define RTHUMG1 KC_ENT
 #define RTHUMG2 LT(_SYMB, KC_BSPC)
 #define RTHUMG3 KC_DEL
-
-#include "../../../users/geewiz/keysyms.h"

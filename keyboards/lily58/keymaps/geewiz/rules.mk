@@ -32,3 +32,5 @@ SRC +=  ./lib/rgb_state_reader.c \
         # ./lib/mode_icon_reader.c \
         # ./lib/host_led_state_reader.c \
         # ./lib/timelogger.c \
+
+SRC += ../../../users/geewiz/smart_caps.c 
