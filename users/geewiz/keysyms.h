@@ -36,6 +36,8 @@ enum keycodes {
 #define ESC_CTL LCTL_T(KC_ESC)
 #define ESC_GUI LGUI_T(KC_ESC)
 #define ENT_SFT LSFT_T(KC_ENT)
+#define Z_CTL LCTL_T(KC_Z)
+#define SLS_CTL RCTL_T(KC_SLSH)
 #define CHTUNXT LSFT(LALT(KC_DOWN))
 #define CHTUPRV LSFT(LALT(KC_UP))
 
