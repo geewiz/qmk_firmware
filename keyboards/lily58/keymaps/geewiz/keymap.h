@@ -18,11 +18,11 @@ enum layer_names {
 
 // Thumb keys
 #define LTHUMB1 KC_TAB
-#define LTHUMB2 LT(_LOWER, KC_SPC)
+#define LTHUMB2 LT(_LOWER, KC_BSPC)
 #define LTHUMB3 LALT_T(KC_ESC)
 #define LTHUMB4 KC_LGUI
 #define RTHUMB1 KC_ENT
-#define RTHUMB2 LT(_RAISE, KC_BSPC)
+#define RTHUMB2 LT(_RAISE, KC_SPC)
 #define RTHUMB3 RALT_T(KC_DEL)
 #define RTHUMB4 KC_RGUI
 
