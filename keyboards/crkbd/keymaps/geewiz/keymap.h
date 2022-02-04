@@ -4,12 +4,11 @@
 #include "../../../../users/geewiz/keysyms.h"
 
 enum layer_names {
-  _DFLT,
+  _DEFAULT,
   _GAME,
-  _NAVI,
-  _NUMB,
-  _SYMB,
-  _FUNC
+  _LOWER,
+  _RAISE,
+  _ADJUST
 };
 
 enum macro_keycodes {
@@ -20,22 +19,22 @@ enum macro_keycodes {
 
 // Layer switching
 #define LY_GAME TG(_GAME)
-#define LY_NAVI MO(_NAVI)
-#define LY_SYMB MO(_SYMB)
-#define LY_FUNC MO(_FUNC)
+#define LY_LWR MO(_LOWER)
+#define LY_RSE MO(_RAISE)
+#define LY_ADJ MO(_ADJUST)
 
 // Thumb keys
 #define LTHUMB1 KC_TAB
-#define LTHUMB2 LT(_NAVI, KC_SPC)
-#define LTHUMB3 KC_ESC
-#define RTHUMB1 LT(_SYMB, KC_ENT)
-#define RTHUMB2 LT(_NUMB, KC_BSPC)
-#define RTHUMB3 LT(_FUNC, KC_DEL)
+#define LTHUMB2 LT(_LOWER, KC_BSPC)
+#define LTHUMB3 LGUI_T(KC_ESC)
+#define RTHUMB1 KC_ENT
+#define RTHUMB2 LT(_RAISE, KC_SPC)
+#define RTHUMB3 LALT_T(KC_DEL)
 
 // Thumb keys GAME
 #define LTHUMG1 KC_TAB
-#define LTHUMG2 LT(_NAVI, KC_SPC)
+#define LTHUMG2 LT(_LOWER, KC_BSPC)
 #define LTHUMG3 LALT_T(KC_ESC)
 #define RTHUMG1 KC_ENT
-#define RTHUMG2 LT(_SYMB, KC_BSPC)
+#define RTHUMG2 LT(_RAISE, KC_SPC)
 #define RTHUMG3 KC_DEL

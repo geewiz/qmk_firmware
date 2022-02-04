@@ -44,23 +44,20 @@ static void render_status(void) {
         // Host Keyboard Layer Status
         oled_write_P(PSTR("Layer: "), false);
         switch (get_highest_layer(layer_state | default_layer_state)) {
-            case _DFLT:
+            case _DEFAULT:
                 oled_write_P(PSTR("Default\n"), false);
                 break;
             case _GAME:
                 oled_write_P(PSTR("Game\n"), false);
                 break;
-            case _NAVI:
-                oled_write_P(PSTR("Navi\n"), false);
+            case _LOWER:
+                oled_write_P(PSTR("Lower\n"), false);
                 break;
-            case _NUMB:
-                oled_write_P(PSTR("Numbers\n"), false);
+            case _RAISE:
+                oled_write_P(PSTR("Raise\n"), false);
                 break;
-            case _SYMB:
-                oled_write_P(PSTR("Symbols\n"), false);
-                break;
-            case _FUNC:
-                oled_write_P(PSTR("Function\n"), false);
+            case _ADJUST:
+                oled_write_P(PSTR("Adjust\n"), false);
                 break;
             default:
                 oled_write_P(PSTR("Undefined\n"), false);

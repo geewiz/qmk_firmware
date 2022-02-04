@@ -32,11 +32,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* ,-----------------------------------------------------.                   ,-----------------------------------------------------. */
      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, \
 /* |--------+--------+--------+--------+--------+--------|                   |--------+--------+--------+--------+--------+--------| */
-     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_DEL , \
+     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     U_RDO  , U_PST  , U_CPY  , U_CUT  , U_UND  , KC_DEL , \
 /* |--------+--------+--------+--------+--------+--------|                   |--------+--------+--------+--------+--------+--------| */
-     _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, U_SMCL ,                     KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, KC_TAB , _______, \
+     _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                     KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, U_SMCL , _______, \
 /* |--------+--------+--------+--------+--------+--------|--------. .--------|--------+--------+--------+--------+--------+--------| */
-     _______, CTL_Z  , CTL_X  , CTL_C  , CTL_V  , XXXXXXX, XXXXXXX,   XXXXXXX, KC_HOME, KC_PGDN, KC_PGUP, KC_END , XXXXXXX, _______, \
+     _______, CTL_Z  , CTL_X  , CTL_C  , CTL_V  , XXXXXXX, XXXXXXX,   XXXXXXX, KC_HOME, KC_PGDN, KC_PGUP, KC_END , KC_INS , _______, \
 /* |--------+--------+--------+--------+--------+--------/-------/   \-------\--------+--------+--------+--------+--------+--------| */
                               _______, _______, _______, _______,       _______, LY_ADJ , KC_RGUI, _______ \
 /*                          |--------+--------+--------|--------/     \--------|--------+--------+--------|                          */
@@ -45,9 +45,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* ,-----------------------------------------------------.                   ,-----------------------------------------------------. */
      _______, _______, _______, _______, _______, _______,                     _______, _______, _______, _______, _______, _______, \
 /* |--------+--------+--------+--------+--------+--------|                   |--------+--------+--------+--------+--------+--------| */
-     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, \
+     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSLS, \
 /* |--------+--------+--------+--------+--------+--------|                   |--------+--------+--------+--------+--------+--------| */
-     _______, KC_EXLM, KC_PLUS, KC_LPRN, KC_RPRN, KC_AT  ,                     KC_PIPE, KC_MINS, KC_EQL , KC_UNDS, KC_ASTR, _______, \
+     _______, KC_EXLM, KC_PLUS, KC_LPRN, KC_RPRN, KC_AT  ,                     KC_PIPE, KC_MINS, KC_EQL , KC_UNDS, KC_ASTR, KC_GRV , \
 /* |--------+--------+--------+--------+--------+--------|--------. .--------|--------+--------+--------+--------+--------+--------| */
      _______, KC_CIRC, KC_HASH, KC_LBRC, KC_RBRC, KC_TILD, KC_GRV ,   KC_BSLS, KC_AMPR, KC_LCBR, KC_RCBR, KC_PERC, KC_DLR , _______, \
 /* |--------+--------+--------+--------+--------+--------/-------/   \-------\--------+--------+--------+--------+--------+--------| */
