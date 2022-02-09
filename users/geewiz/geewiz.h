@@ -5,6 +5,25 @@ enum keycodes {
   U_SMCL, // Smart caps lock
 };
 
+enum layer_names {
+  _DEFAULT,
+  _GAME,
+  _LOWER,
+  _RAISE,
+  _ADJUST
+};
+
+// Layer switch
+#define LY_DFLT MO(_DEFAULT)
+#define LY_LOWR MO(_LOWER)
+#define LY_RAIS MO(_RAISE)
+#define LY_ADJT MO(_ADJUST)
+#define LY_GAME TG(_GAME)
+
+// Layer taps
+#define BSP_LWR LT(_LOWER, KC_BSPC)
+#define SPC_RSE LT(_RAISE, KC_SPC)
+
 // Default layer home row mods
 #define DH_A    LGUI_T(KC_A)
 #define DH_S    LALT_T(KC_S)
@@ -35,6 +54,7 @@ enum keycodes {
 #define DEL_ALT LALT_T(KC_DEL)
 #define ESC_CTL LCTL_T(KC_ESC)
 #define ESC_GUI LGUI_T(KC_ESC)
+#define ESC_ALT LALT_T(KC_ESC)
 #define ENT_SFT LSFT_T(KC_ENT)
 #define Z_CTL LCTL_T(KC_Z)
 #define SLS_CTL RCTL_T(KC_SLSH)
