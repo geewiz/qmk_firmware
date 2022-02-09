@@ -1,7 +1,7 @@
 #pragma once
 
 #include QMK_KEYBOARD_H
-#include "../../../../users/geewiz/keysyms.h"
+#include "geewiz.h"
 
 enum layer_names {
   _DEFAULT,
@@ -10,12 +10,6 @@ enum layer_names {
   _RAISE,
   _ADJUST
 };
-
-enum macro_keycodes {
-  KC_SAMPLEMACRO,
-};
-
-// #define _______ KC_TRNS
 
 // Layer switching
 #define LY_GAME TG(_GAME)

@@ -92,11 +92,3 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       //`--------------------------'  `--------------------------'
   )
 };
-
-#include "process_records.c"
-
-#if defined(COMBO_ENABLE)
-#include "g/keymap_combo.h" // to make combo def dictionary work
-#endif
-
-#include "../../../users/geewiz/leader.c"

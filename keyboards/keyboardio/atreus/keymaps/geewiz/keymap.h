@@ -1,6 +1,7 @@
 #pragma once
 
 #include QMK_KEYBOARD_H
+#include "geewiz.h"
 
 enum layer_names {
   _DFLT,
@@ -8,10 +9,6 @@ enum layer_names {
   _NUMB,
   _SYMB,
   _FUNC
-};
-
-enum keycodes {
-    U_SMCL = SAFE_RANGE, // Smart caps lock
 };
 
 #define _______ KC_TRNS
@@ -28,5 +25,3 @@ enum keycodes {
 #define RTHUMB1 LT(_SYMB, KC_ENT)
 #define RTHUMB2 LT(_NUMB, KC_BSPC)
 #define RTHUMB3 LT(_FUNC, KC_DEL)
-
-#include "../../../users/geewiz/keysyms.h"

@@ -1,6 +1,7 @@
 #pragma once
 
 #include QMK_KEYBOARD_H
+#include "geewiz.h"
 
 enum layer_names {
     _DEFAULT,
@@ -35,5 +36,3 @@ enum layer_names {
 #define RTHUMG2 LT(_RAISE, KC_SPC)
 #define RTHUMG3 KC_DEL
 #define RTHUMG4 XXXXXXX
-
-#include "../../../users/geewiz/keysyms.h"

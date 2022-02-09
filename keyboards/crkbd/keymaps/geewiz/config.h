@@ -24,6 +24,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define USE_SERIAL_PD2
 
+#ifdef OLED_ENABLE
+#    define SPLIT_OLED_ENABLE
+#    define OLED_TIMEOUT 10000
+#    define OLED_DISABLE_TIMEOUT // Prevent matrix_changed triggering oled_on()
+#    define OLED_UPDATE_INTERVAL 50
+#    define OLED_BRIGHTNESS 180
+#    define OLED_FONT_H "keyboards/crkbd/keymaps/geewiz/glcdfont.c"
+#endif
+
 #ifdef RGB_MATRIX_ENABLE
 #  define RGB_MATRIX_KEYPRESSES
 #  define RGB_MATRIX_MAXIMUM_BRIGHTNESS 150
@@ -91,21 +100,3 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     #define RGBLIGHT_SAT_STEP 17
     #define RGBLIGHT_VAL_STEP 17
 #endif
-
-#ifdef OLED_ENABLE
-#    define SPLIT_OLED_ENABLE
-#    define OLED_TIMEOUT 10000
-#    define OLED_DISABLE_TIMEOUT // Prevent matrix_changed triggering oled_on()
-#    define OLED_UPDATE_INTERVAL 50
-#    define OLED_BRIGHTNESS 180
-#    define OLED_FONT_H "keyboards/crkbd/keymaps/geewiz/glcdfont.c"
-#endif
-
-#ifdef AUTO_SHIFT_ENABLE
-#define NO_AUTO_SHIFT_ALPHA
-#define AUTO_SHIFT_TIMEOUT TAPPING_TERM
-#define AUTO_SHIFT_NO_SETUP
-#endif
-
-// My individual settings shared between keyboards
-#include "../../../users/geewiz/config.h"

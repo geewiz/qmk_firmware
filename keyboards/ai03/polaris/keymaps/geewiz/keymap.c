@@ -14,6 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include QMK_KEYBOARD_H
+#include "geewiz.h"
 
 enum layer_names {
   _BASE,
@@ -36,5 +37,3 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX, _______, _______,                                     _______,                                     _______, _______, XXXXXXX
   )
 };
-
-#include "../../../users/geewiz/leader.c"
