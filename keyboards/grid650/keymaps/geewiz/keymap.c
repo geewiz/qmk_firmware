@@ -14,8 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include QMK_KEYBOARD_H
-
-// #define LED_DEBUG
+#include "geewiz.h"
 
 // Defines names for use in layer keycodes and the keymap
 enum layer_names {
@@ -23,45 +22,6 @@ enum layer_names {
     _FN
 };
 
-// Defines the keycodes used by our macros in process_record_user
-// enum custom_keycodes {
-//     QMKBEST = SAFE_RANGE,
-//     QMKURL
-// };
-
-//keymap for test
-// const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-//     /* Base */
-//     [_BASE] = LAYOUT(
-//         KC_1,       KC_2,       MO(_FN),
-//         KC_4,       KC_5,       KC_6, 
-//         KC_7,       KC_8,       KC_9,
-//         KC_A,       KC_B,       KC_C,
-//         OUT_USB,    OUT_BT,       KC_F
-//     )
-//     // [_FN] = LAYOUT(
-//     //     QMKBEST, QMKURL,  _______,
-//     //         RESET,    XXXXXXX
-//     // )
-// };
-
-
-
-enum my_keycodes {
-  FOO = SAFE_RANGE,
-  BAR,
-  LED_BLE,
-  BLE_PWR_OFF,
-  BLE_PWR_ON,
-  BLE_DFU,
-  BREATHING,
-  ON,
-  RED,
-  BLUE,
-  ORANGE
-};
-
-// USB keymap for user
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Base */
     [_BASE] = LAYOUT(
@@ -81,62 +41,3 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______        
     )
 };
-
-//uint8_t white_led = 1;
-uint8_t orange_led = 1;
-uint8_t red_led = 1;
-uint8_t ble_led = 1;
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case BLE_PWR_OFF:
-            if (record->event.pressed) {
-                //BLE_PWR(PD5) LOW
-                PORTD &= ~(1<<5);
-
-                //BLE_OE(PD2) HIGH
-                PORTD |= (1<<2);
-
-                //DFU_MCU(PC6) HIGH
-                // PORTC |= 1 << 6;   //set high
-            } else {
-                // Do something else when release
-            }
-            return true;      
-
-        case BLE_PWR_ON:
-            if (record->event.pressed) {
-                
-                //BLE_PWR(PD5) HIGH
-                // PORTD &= ~(1<<5);
-                PORTD |= (1<<5);
-
-                //BLE_OE(PD2) LOW
-                // PORTD |= (1<<2);
-                PORTD &= ~(1<<2);
-
-                //DFU_MCU(PC6) HIGH
-                // PORTC |= 1 << 6;   //set high
-                    
-            } else {
-                // Do something else when release
-            }
-            return true;         
-
-        case BLE_DFU:
-            if (record->event.pressed) {
-                //DFU_MCU(PC6) HIGH
-                PORTC |= 1 << 6;   //set high
-                  
-            } else {
-                // Do something else when release
-                //DFU_MCU(PC6) LOW
-                PORTC &= ~(1 << 6);   //set high
-            }
-            return true; 
-        default:
-            return true; // Process all other keycodes normally
-    }
-}
-
-#include "../../../users/geewiz/leader.c"

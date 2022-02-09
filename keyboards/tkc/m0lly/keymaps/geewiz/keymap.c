@@ -15,6 +15,7 @@
  */
 
 #include QMK_KEYBOARD_H
+#include "geewiz.h"
 
 enum layer_names {
     _BASE,
@@ -93,5 +94,3 @@ void oled_task_user(void) {
     oled_write_P(led_state.scroll_lock ? PSTR("SCR ") : PSTR("    "), false);
 }
 #endif
-
-#include "../../../users/geewiz/leader.c"

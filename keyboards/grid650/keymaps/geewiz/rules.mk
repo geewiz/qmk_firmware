@@ -63,8 +63,3 @@ VIA_ENABLE = no
 FAUXCLICKY_ENABLE = no      # Use buzzer to emulate clicky switches
 AUDIO_ENABLE = no           # Audio output
 HD44780_ENABLE = no         # Enable support for HD44780 based LCDs
-
-BOOTMAGIC_ENABLE = lite
-MOUSEKEY_ENABLE = yes
-EXTRAKEY_ENABLE = yes
-LEADER_ENABLE = yes

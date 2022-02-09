@@ -47,3 +47,8 @@ enum keycodes {
 #define RMAC1 DYN_REC_START1
 #define RMAC2 DYN_REC_START2
 #define RMACS DYN_REC_STOP
+
+void toggle_smart_caps(void);
+void enable_smart_caps(void);
+void disable_smart_caps(void);
+bool process_smart_caps(uint16_t keycode, keyrecord_t *record);
