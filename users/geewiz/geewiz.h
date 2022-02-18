@@ -22,6 +22,7 @@ enum layer_names {
 
 // Layer taps
 #define BSP_LWR LT(_LOWER, KC_BSPC)
+#define TAB_LWR LT(_LOWER, KC_TAB)
 #define SPC_RSE LT(_RAISE, KC_SPC)
 
 // Default layer home row mods
