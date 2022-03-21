@@ -36,11 +36,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       KC_TAB , KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,                      KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LCTL, KC_A   , KC_S   , KC_D   , KC_F   , KC_G   ,                      KC_H   , KC_J   , KC_K   , KC_L   , KC_SCLN, KC_QUOT,\
+      KC_LCTL, DH_A   , DH_S   , DH_D   , DH_F   , KC_G   ,                      KC_H   , DH_J   , DH_K   , DH_L   , DH_SCLN, KC_QUOT,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       OSLSFT , KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   ,                      KC_N   , KC_M   , KC_COMM, KC_DOT , SLS_CTL, ENT_SFT,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          ESC_GUI, BSP_LWR, KC_TAB ,    KC_ENT , SPC_RSE, DEL_ALT \
+                                          KC_ESC , BSP_LWR, KC_TAB ,    KC_ENT , SPC_RSE, KC_DEL  \
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -52,7 +52,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   ,                      KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, KC_ENT ,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_TAB , BSP_LWR, ESC_ALT,    KC_ENT , SPC_RSE, KC_DEL  \
+                                          KC_TAB , BSP_LWR, KC_SPC ,    KC_ENT , SPC_RSE, KC_DEL  \
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -60,9 +60,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      U_RDO  , U_PST  , U_CPY  , U_CUT  , U_UND  , _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, U_SMCL , _______,\
+      _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, CHTUPRV,                      KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, U_SMCL , KC_RGUI,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_HOME, KC_PGDN, KC_PGUP, KC_END , KC_INS , _______,\
+      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, CHTUNXT,                      KC_HOME, KC_PGDN, KC_PGUP, KC_END , KC_INS , _______,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           _______, _______, _______,    _______, LY_ADJT, _______ \
                                       //`--------------------------'  `--------------------------'
@@ -84,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       RESET  , KC_F9  , KC_F10 , KC_F11 , KC_F12 , KC_PSCR,                      RGB_TOG, RGB_MOD, RGB_HUI, RGB_SAI, RGB_VAI, RGB_SPI,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, KC_F5  , KC_F6  , KC_F7  , KC_F8  , KC_SLCK,                      XXXXXXX, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, XXXXXXX,\
+      XXXXXXX, KC_F5  , KC_F6  , KC_F7  , KC_F8  , KC_SLCK,                      LY_GAME, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_PAUS,                      XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
