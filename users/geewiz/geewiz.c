@@ -2,7 +2,18 @@
 #include <stdbool.h>
 #include "geewiz.h"
 
-/* Based on work from @dnaq and @iaap on the splitkb.com Discord. */
+#ifdef COMBO_ENABLE
+#include "g/keymap_combo.h" // to make combo def dictionary work
+#endif
+
+#ifdef OLED_ENABLE
+uint32_t tap_timer = 0; // Initialize timer for OLED animation
+#endif
+
+/***
+* Smart Caps Lock
+* Based on work from @dnaq and @iaap on the splitkb.com Discord.
+***/
 
 static bool smart_caps_enabled = false;
 
@@ -65,18 +76,53 @@ bool process_smart_caps(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
 
+/***
+* Layers
+***/
+
 void persistent_default_layer_set(uint16_t default_layer) {
   eeconfig_update_default_layer(default_layer);
   default_layer_set(default_layer);
 }
 
-#ifdef COMBO_ENABLE
-#include "g/keymap_combo.h" // to make combo def dictionary work
+/***
+* Mod-tap, home row mods
+***/
+
+#ifdef TAPPING_TERM_PER_KEY                                                                                                                                                              
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case DH_A:
+        case DH_S:
+        case DH_L:
+        case DH_SCLN:
+            return TAPPING_TERM + 50;
+        case DH_F:
+        case DH_J:
+            return TAPPING_TERM - 50;
+        case DH_D:
+        case DH_K:
+            return TAPPING_TERM - 80;
+        default:
+            return TAPPING_TERM;
+    }   
+}       
 #endif
 
-#ifdef OLED_ENABLE
-uint32_t tap_timer = 0; // Initialize timer for OLED animation
+#ifdef TAPPING_FORCE_HOLD_PER_KEY
+bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case BSP_LWR:
+            return false;
+        default:
+            return true;
+    }
+}
 #endif
+
+/***
+* Main key processing
+***/
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   const bool pressed = record->event.pressed;
@@ -98,6 +144,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
   return true;
 };
+
+/***
+* Leader key
+***/
 
 #if defined(LEADER_ENABLE)
 LEADER_EXTERNS();
