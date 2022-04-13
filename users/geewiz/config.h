@@ -11,6 +11,8 @@
 #define TAPPING_FORCE_HOLD
 // ...except a few special taps
 #define TAPPING_FORCE_HOLD_PER_KEY
+// Rolls are taps
+#undef PERMISSIVE_HOLD 
 
 /* Key combos */
 #define COMBO_TERM 50
@@ -29,3 +31,5 @@
 #define AUTO_SHIFT_TIMEOUT TAPPING_TERM
 #define AUTO_SHIFT_NO_SETUP
 #endif
+
+#define SMART_CAPS_ENABLE
