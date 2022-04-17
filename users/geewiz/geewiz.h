@@ -10,6 +10,7 @@ enum layer_names {
   _GAME,
   _LOWER,
   _RAISE,
+  _SYMBOL,
   _ADJUST
 };
 
@@ -24,17 +25,19 @@ enum layer_names {
 #define BSP_LWR LT(_LOWER, KC_BSPC)
 #define TAB_LWR LT(_LOWER, KC_TAB)
 #define SPC_RSE LT(_RAISE, KC_SPC)
+#define DEL_ADJ LT(_ADJUST, KC_DEL)
+#define ENT_SYM LT(_SYMBOL, KC_ENT)
 
 // Default layer home row mods
 #define DH_A    LGUI_T(KC_A)
 #define DH_S    LALT_T(KC_S)
 #define DH_D    LCTL_T(KC_D)
 #define DH_F    LSFT_T(KC_F)
-#define DH_SCLN RGUI_T(KC_SCLN)
-#define DH_QUOT RGUI_T(KC_QUOT)
-#define DH_L    RALT_T(KC_L)
-#define DH_K    RCTL_T(KC_K)
-#define DH_J    RSFT_T(KC_J)
+#define DH_SCLN LGUI_T(KC_SCLN)
+#define DH_QUOT LGUI_T(KC_QUOT)
+#define DH_L    LALT_T(KC_L)
+#define DH_K    LCTL_T(KC_K)
+#define DH_J    LSFT_T(KC_J)
 
 // Windows functions
 #define U_RDO LCTL(KC_Y)
