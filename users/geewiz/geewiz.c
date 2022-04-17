@@ -11,7 +11,6 @@
 uint32_t tap_timer = 0; // Initialize timer for OLED animation
 #endif
 
-
 /***
 * Layers
 ***/
