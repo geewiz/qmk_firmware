@@ -60,26 +60,20 @@ bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
 ***/
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  const bool pressed = record->event.pressed;
-
 #ifdef OLED_ENABLE // Reset typing timer for OLED animation
-  if (pressed) { tap_timer = timer_read32(); }
+  if (record->event.pressed) { tap_timer = timer_read32(); }
 #endif
 
   switch (keycode) {
-#ifdef SMART_CAPS_ENABLE
     case U_SMCL:
-        if (pressed) return false;
+        if (record->event.pressed) return false;
         toggle_smart_caps();
         return false;
-#endif
   }
 
-#ifdef SMART_CAPS_ENABLE
   if (!process_smart_caps(keycode, record)) {
       return false;
   }
-#endif
 
   return true;
 };
@@ -88,7 +82,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 * Leader key
 ***/
 
-#if defined(LEADER_ENABLE)
+#ifdef LEADER_ENABLE
 LEADER_EXTERNS();
 
 void matrix_scan_user(void) {
