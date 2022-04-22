@@ -42,7 +42,7 @@
 #include <util/delay.h>
 #include "analog.h"
 #include "debug.h"
-#include "adafruit_ble.h"
+// #include "adafruit_ble.h"
 #include <util/delay.h>
 #include "report.h"
 #include "suspend.h"
@@ -50,7 +50,7 @@
 #include <avr/sleep.h>
 #include <avr/wdt.h>
 
-#include "outputselect.h"
+// #include "outputselect.h"
 
 
 
