@@ -56,6 +56,9 @@ static void render_status(void) {
             case _RAISE:
                 oled_write_P(PSTR("Raise\n"), false);
                 break;
+            case _SYMBOL:
+                oled_write_P(PSTR("Symbol\n"), false);
+                break;
             case _ADJUST:
                 oled_write_P(PSTR("Adjust\n"), false);
                 break;
@@ -87,10 +90,11 @@ void render_logos(void) {
     render_qmk_logo();
 }
 
-__attribute__((weak)) void oled_task_user(void) {
+__attribute__((weak)) bool oled_task_user(void) {
     if (is_keyboard_master()) {
       render_status();
     } else {
       render_logos();
     }
+    return false;
 }

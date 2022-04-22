@@ -24,17 +24,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	//,--------------------------------------------.                  ,--------------------------------------------.
       KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,                    KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   ,
 	//|--------+--------+--------+--------+--------|                  |--------+--------+--------+--------+--------|
-      DH_A   , DH_S   , DH_D   , DH_F   , KC_G   ,                    KC_H   , DH_J   , DH_K   , DH_L   , DH_SCLN,
+      DH_A   , DH_S   , DH_D   , DH_F   , KC_G   ,                    KC_H   , DH_J   , DH_K   , DH_L   , DH_QUOT,
 	//|--------+--------+--------+--------+--------+--------.,--------+--------+--------+--------+--------+--------|
       KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , KC_GRV ,  KC_BSLS, KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH,
 	//|--------+--------+--------+--------+--------+--------||--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, KC_ESC , BSP_LWR, KC_TAB ,  ENT_SYM, SPC_RSE, DEL_ADJ, KC_MINS, KC_QUOT, KC_ENT 
+      XXXXXXX, XXXXXXX, XXXXXXX, KC_ESC , BSP_LWR, KC_TAB ,  ENT_SYM, SPC_RSE, DEL_ADJ, KC_MINS, KC_SCLN, KC_ENT 
 	//`-----------------------------------------------------'`-----------------------------------------------------'
   ),
 
   [_LOWER] = LAYOUT(
 	//,--------------------------------------------.                  ,--------------------------------------------.
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    U_RDO  , U_PST  , U_CPY  , U_UND  , XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    U_RDO  , U_PST  , U_CPY  , U_CUT  , U_UND  ,
 	//|--------+--------+--------+--------+--------|                  |--------+--------+--------+--------+--------|
       KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                    KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, U_SMCL ,
 	//|--------+--------+--------+--------+--------+--------.,--------+--------+--------+--------+--------+--------|
