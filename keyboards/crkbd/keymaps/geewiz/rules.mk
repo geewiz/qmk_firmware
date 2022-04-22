@@ -1,7 +1,5 @@
 BOOTLOADER = atmel-dfu # Elite-C MCU
 
-VPATH += keyboards/gboards/
-
 AUDIO_ENABLE = no
 AUTO_SHIFT_ENABLE = no
 BOOTMAGIC_ENABLE = no

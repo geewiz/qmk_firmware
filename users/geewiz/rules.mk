@@ -1,6 +1,8 @@
 SRC += $(USER_PATH)/geewiz.c
 SRC += $(USER_PATH)/smart_caps.c
 
+VPATH += keyboards/gboards/
+
 AUDIO_ENABLE = no           # Audio output on port C6
 COMBO_ENABLE = yes          # Key combos
 COMMAND_ENABLE = no         # Commands for debug and configuration
