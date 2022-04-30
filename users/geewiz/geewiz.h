@@ -29,6 +29,16 @@ enum layer_names {
 #define ENT_SYM LT(_SYMBOL, KC_ENT)
 
 // Default layer home row mods
+#if defined(GEEWIZ_COLEMAK)
+#define DH_A    LGUI_T(KC_A)
+#define DH_R    LALT_T(KC_R)
+#define DH_S    LCTL_T(KC_S)
+#define DH_T    LSFT_T(KC_T)
+#define DH_O    LGUI_T(KC_O)
+#define DH_I    LALT_T(KC_I)
+#define DH_E    LCTL_T(KC_E)
+#define DH_N    LSFT_T(KC_N)
+#else
 #define DH_A    LGUI_T(KC_A)
 #define DH_S    LALT_T(KC_S)
 #define DH_D    LCTL_T(KC_D)
@@ -38,6 +48,7 @@ enum layer_names {
 #define DH_L    LALT_T(KC_L)
 #define DH_K    LCTL_T(KC_K)
 #define DH_J    LSFT_T(KC_J)
+#endif
 
 // Windows functions
 #define U_RDO LCTL(KC_Y)

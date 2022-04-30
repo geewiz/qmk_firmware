@@ -27,17 +27,26 @@ void persistent_default_layer_set(uint16_t default_layer) {
 #ifdef TAPPING_TERM_PER_KEY                                                                                                                                                              
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
+#  if defined(GEEWIZ_COLEMAK)
+        case DH_A:
+        case DH_R:
+        case DH_I:
+        case DH_O:
+            return TAPPING_TERM + 80;
+        case DH_T:
+        case DH_N:
+            return TAPPING_TERM - 50;
+#  else
         case DH_A:
         case DH_S:
         case DH_L:
         case DH_SCLN:
+        case DH_QUOT:
             return TAPPING_TERM + 80;
         case DH_F:
         case DH_J:
             return TAPPING_TERM - 50;
-        case DH_D:
-        case DH_K:
-            return TAPPING_TERM - 80;
+#  endif
         default:
             return TAPPING_TERM;
     }   
