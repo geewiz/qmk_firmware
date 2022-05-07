@@ -11,6 +11,7 @@ enum layer_names {
   _LOWER,
   _RAISE,
   _SYMBOL,
+  _MOUSE,
   _ADJUST
 };
 
@@ -27,6 +28,7 @@ enum layer_names {
 #define SPC_RSE LT(_RAISE, KC_SPC)
 #define DEL_ADJ LT(_ADJUST, KC_DEL)
 #define ENT_SYM LT(_SYMBOL, KC_ENT)
+#define TAB_MSE LT(_MOUSE, KC_TAB)
 
 // Default layer home row mods
 #if defined(GEEWIZ_COLEMAK)
