@@ -84,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_MOUSE] = LAYOUT(
 	//,--------------------------------------------.                  ,--------------------------------------------.
-      RESET  , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    U_RDO  , U_PST  , U_CPY  , U_CUT  , XXXXXXX,
+      RESET  , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    U_RDO  , U_PST  , U_CPY  , U_CUT  , U_UND ,
 	//|--------+--------+--------+--------+--------|                  |--------+--------+--------+--------+--------|
       KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                    KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, XXXXXXX,
 	//|--------+--------+--------+--------+--------+--------.,--------+--------+--------+--------+--------+--------|
