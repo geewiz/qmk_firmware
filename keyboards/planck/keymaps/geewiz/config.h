@@ -1,0 +1,1 @@
+#define GEEWIZ_COLEMAK
