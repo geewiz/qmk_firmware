@@ -17,10 +17,12 @@ enum layer_names {
 
 // Layer switch
 #define LY_DFLT MO(_DEFAULT)
+#define LY_GAME TG(_GAME)
 #define LY_LOWR MO(_LOWER)
 #define LY_RAIS MO(_RAISE)
+#define LY_SYMB MO(_SYMBOL)
+#define LY_MOUS MO(_MOUSE)
 #define LY_ADJT MO(_ADJUST)
-#define LY_GAME TG(_GAME)
 
 // Layer taps
 #define BSP_LWR LT(_LOWER, KC_BSPC)
