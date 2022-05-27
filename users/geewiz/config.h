@@ -12,7 +12,7 @@
 // ...except a few special taps
 #define TAPPING_FORCE_HOLD_PER_KEY
 // Rolls are taps
-#undef PERMISSIVE_HOLD 
+#undef PERMISSIVE_HOLD
 
 /* Key combos */
 #define COMBO_TERM 50
@@ -24,8 +24,17 @@
 // Leader key
 #define LEADER_TIMEOUT 500
 
+// Media keys
 #define MEDIA_KEY_DELAY 10
 
+// Mouse keys
+#define MOUSEKEY_INTERVAL 16
+#define MOUSEKEY_DELAY 0
+#define MOUSEKEY_TIME_TO_MAX 60
+#define MOUSEKEY_MAX_SPEED 7
+#define MOUSEKEY_WHEEL_DELAY 0
+
+// Auto-shift
 #ifdef AUTO_SHIFT_ENABLE
 #define NO_AUTO_SHIFT_ALPHA
 #define AUTO_SHIFT_TIMEOUT TAPPING_TERM
