@@ -29,9 +29,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_ADJUST] = LAYOUT(
         RESET  , KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  , KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10 , KC_F11 , KC_F12 , KC_INS , KC_DEL , KC_DEL,
         KC_CAPS, KC_NLCK, _______, _______, _______, _______, _______, _______, KC_PSCR, KC_SLCK, KC_PAUS, KC_MS_U, _______, _______, KC_HOME, KC_BSPC,
-        _______, KC_VOLD, KC_VOLU, KC_MUTE, KC_BTN1, KC_BTN2, _______, _______, _______, _______, KC_MS_L, KC_MS_R, _______, KC_LEAD, KC_END ,
+        _______, KC_VOLD, KC_VOLU, KC_MUTE, KC_BTN1, KC_BTN2, KC_BTN3, _______, _______, _______, KC_MS_L, KC_MS_R, _______, KC_LEAD, KC_END ,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_MS_D, _______, KC_PGUP, _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_RALT, _______, KC_HOME, KC_PGDN, KC_END ,
-        _______, _______, _______, _______        
+        _______, _______, _______, _______
     )
 };
