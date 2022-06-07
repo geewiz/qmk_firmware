@@ -14,28 +14,21 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include QMK_KEYBOARD_H
-
-/* layer constants */
-enum {
-  DEF = 0,
-  NUM,
-  FUN,
-};
-
+#include "geewiz.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-[DEF] = LAYOUT(
-  RESET  , KC_1   , KC_2   , KC_3   , KC_4   , KC_5   ,                      KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , TG(NUM),
+[_DEFAULT] = LAYOUT(
+  RESET  , KC_1   , KC_2   , KC_3   , KC_4   , KC_5   ,                      KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , TG(_RAISE),
   KC_GRV , KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   , RGB_MOD,    _______, KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , KC_EQL ,
-  KC_PGUP, KC_A   , KC_S   , KC_D   , KC_F   , KC_G   , KC_TAB ,    KC_ENT , KC_H   , KC_J   , KC_K   , KC_L   , KC_SCLN, KC_QUOT,
+  KC_PGUP, KC_A   , DH_S   , DH_D   , DH_F   , KC_G   , KC_TAB ,    KC_ENT , KC_H   , DH_J   , DH_K   , DH_L   , DH_SCLN, KC_QUOT,
   KC_PGDN, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , KC_ESC ,    _______, KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, KC_MINS,
                                          KC_LCTL,                                 KC_RCTL,
-                                            KC_SPC,                            KC_BSPC ,
+                                            KC_BSPC,                            KC_SPC ,
                                                KC_LGUI,                     KC_RALT,
                                                   KC_LSFT,               KC_RSFT,
-                                      MO(FUN),                                        MO(FUN)
+                                      LY_ADJT,                                        LY_ADJT
   ),
-[NUM] = LAYOUT(
+[_RAISE] = LAYOUT(
   _______, _______, _______, _______, _______, _______,                      _______, KC_P7  , KC_P8  , KC_P9  , KC_PMNS, _______,
   _______, _______, _______, _______, _______, _______, _______,    _______, _______, KC_P4  , KC_P5  , KC_P6  , KC_PPLS, _______,
   _______, _______, _______, _______, _______, _______, _______,    _______, _______, KC_P1  , KC_P2  , KC_P3  , KC_PEQL, _______,
@@ -46,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                   _______,               _______,
                                       _______,                                        _______
   ),
-[FUN] = LAYOUT(
+[_ADJUST] = LAYOUT(
   _______, KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  ,                      KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10 , KC_F11 ,
   KC_TAB , _______, KC_MS_U, _______, KC_BTN3, _______, RGB_TOG,    KC_MPRV, KC_MNXT, KC_LCBR, KC_RCBR, KC_LBRC, KC_RBRC, KC_F12 ,
   KC_HOME, KC_MS_L, KC_MS_D, KC_MS_R, KC_BTN1, _______, _______,    KC_MPLY, KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, _______, _______,
@@ -104,14 +97,14 @@ static void set_numpad_colours(int on, void (*write)(int, uint8_t, uint8_t, uint
  * this handy mechanism allows to override the matrix effects.
  */
 void rgb_matrix_indicators_user(void) {
-  if (layer_state & (1<<NUM)) {
+  if (layer_state & (1<<_RAISE)) {
     set_numpad_colours(1, &rgb_matrix_set_color);
   }
 }
 #else   /* no RGB matrix support */
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-  if (state & (1<<NUM)) {
+  if (state & (1<<_RAISE)) {
     set_numpad_colours(1, &set_led_to);
   } else {
     set_numpad_colours(0, &set_led_to);
