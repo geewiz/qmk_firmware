@@ -45,22 +45,22 @@ static void render_status(void) {
         oled_write_P(PSTR("Layer: "), false);
         switch (get_highest_layer(layer_state | default_layer_state)) {
             case _DEFAULT:
-                oled_write_P(PSTR("Default\n"), false);
+                oled_write_P(PSTR("DEFAULT\n"), false);
                 break;
             case _GAME:
-                oled_write_P(PSTR("Game\n"), false);
+                oled_write_P(PSTR("GAME\n"), false);
                 break;
             case _LOWER:
-                oled_write_P(PSTR("Lower\n"), false);
+                oled_write_P(PSTR("LOWER\n"), false);
                 break;
             case _RAISE:
-                oled_write_P(PSTR("Raise\n"), false);
+                oled_write_P(PSTR("RAISE\n"), false);
                 break;
             case _SYMBOL:
-                oled_write_P(PSTR("Symbol\n"), false);
+                oled_write_P(PSTR("SYMBOL\n"), false);
                 break;
             case _ADJUST:
-                oled_write_P(PSTR("Adjust\n"), false);
+                oled_write_P(PSTR("ADJUST\n"), false);
                 break;
             default:
                 oled_write_P(PSTR("Undefined\n"), false);
