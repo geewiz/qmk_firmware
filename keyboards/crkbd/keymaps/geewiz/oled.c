@@ -59,6 +59,9 @@ static void render_status(void) {
             case _SYMBOL:
                 oled_write_P(PSTR("SYMBOL\n"), false);
                 break;
+            case _MEDIA:
+                oled_write_P(PSTR("MEDIA\n"), false);
+                break;
             case _ADJUST:
                 oled_write_P(PSTR("ADJUST\n"), false);
                 break;
