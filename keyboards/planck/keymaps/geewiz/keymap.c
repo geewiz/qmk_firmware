@@ -12,10 +12,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 #else
 [_DEFAULT] = LAYOUT_planck_grid(
-  KC_TAB , KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
-  XXXXXXX, DH_A,    DH_S,    DH_D,    DH_F,    KC_G,    KC_H,    DH_J,    DH_K,    DH_L,    DH_SCLN, KC_QUOT,
-  XXXXXXX, KC_Z   , KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT ,
-  XXXXXXX, XXXXXXX, XXXXXXX, KC_ESC , KC_NO  , BSP_LWR, KC_NO  , SPC_RSE, KC_DEL , XXXXXXX, XXXXXXX, KC_RCTL
+  KC_Q   , KC_W,    KC_E,    KC_R,    KC_T,    _______, _______, KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   ,
+  DH_A   , DH_S,    DH_D,    DH_F,    KC_G,    _______, _______, KC_J   , DH_K   , DH_L   , DH_SCLN, DH_QUOT,
+  KC_Z   , KC_X   , KC_C,    KC_V,    KC_B,    _______, _______, KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH,
+  XXXXXXX, XXXXXXX, KC_ESC , BSP_LWR, KC_NO  , TAB_MSE, KC_NO  , ENT_SYM, SPC_RSE, DEL_ADJ, XXXXXXX, XXXXXXX
 ),
 #endif
 
@@ -48,9 +48,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_ADJUST] = LAYOUT_planck_grid(
-  RESET  , KC_F9  , KC_F10 , KC_F11 , KC_F12 , KC_PSCR, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  XXXXXXX, KC_F5  , KC_F6  , KC_F7  , KC_F8  , KC_SLCK, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  XXXXXXX, KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_PAUS, XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX,
+  KC_F12 , KC_F7  , KC_F8  , KC_F9  , KC_PSCR, RESET  , _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  KC_F11 , KC_F4  , KC_F5  , KC_F6  , KC_SLCK, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  KC_F10 , KC_F1  , KC_F2  , KC_F3  , KC_PAUS, _______, _______, XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX,
   _______, _______, _______, _______, KC_NO  , _______, KC_NO  , _______, _______, _______, _______, _______
 ),
 
