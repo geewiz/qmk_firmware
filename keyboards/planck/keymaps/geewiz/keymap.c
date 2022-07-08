@@ -13,7 +13,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #else
 [_DEFAULT] = LAYOUT_planck_grid(
   KC_Q   , KC_W,    KC_E,    KC_R,    KC_T,    _______, _______, KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   ,
-  DH_A   , DH_S,    DH_D,    DH_F,    KC_G,    _______, _______, KC_J   , DH_K   , DH_L   , DH_SCLN, DH_QUOT,
+  DH_A   , DH_S,    DH_D,    DH_F,    KC_G,    _______, _______, KC_H   , DH_J   , DH_K   , DH_L   , DH_QUOT,
   KC_Z   , KC_X   , KC_C,    KC_V,    KC_B,    _______, _______, KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH,
   XXXXXXX, XXXXXXX, ESC_MED, BSP_LWR, KC_NO  , TAB_MSE, KC_NO  , ENT_SYM, SPC_RSE, DEL_ADJ, XXXXXXX, XXXXXXX
 ),
