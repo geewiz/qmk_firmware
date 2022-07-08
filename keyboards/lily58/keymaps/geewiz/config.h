@@ -20,9 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
- #define GEEWIZ_COLEMAK
-
-//#define USE_MATRIX_I2C
+//#define GEEWIZ_COLEMAK
 
 /* Select hand configuration */
 #define MASTER_LEFT
