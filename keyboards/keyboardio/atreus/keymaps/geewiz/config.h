@@ -1,3 +1,3 @@
 #pragma once
 
-#define GEEWIZ_COLEMAK
+//#define GEEWIZ_COLEMAK
