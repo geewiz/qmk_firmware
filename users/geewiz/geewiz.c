@@ -24,7 +24,7 @@ void persistent_default_layer_set(uint16_t default_layer) {
 * Mod-tap, home row mods
 ***/
 
-#ifdef TAPPING_TERM_PER_KEY                                                                                                                                                              
+#ifdef TAPPING_TERM_PER_KEY
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
 #  if defined(GEEWIZ_COLEMAK)
@@ -49,14 +49,14 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 #  endif
         default:
             return TAPPING_TERM;
-    }   
-}       
+    }
+}
 #endif
 
 #ifdef TAPPING_FORCE_HOLD_PER_KEY
 bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case BSP_LWR:
+        case BSP_NAV:
             return false;
         default:
             return true;
