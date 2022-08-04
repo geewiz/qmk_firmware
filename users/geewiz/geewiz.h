@@ -8,8 +8,8 @@ enum keycodes {
 enum layer_names {
   _DEFAULT,
   _GAME,
-  _LOWER,
-  _RAISE,
+  _NAVI,
+  _NUMBER,
   _SYMBOL,
   _MOUSE,
   _MEDIA,
@@ -19,18 +19,19 @@ enum layer_names {
 // Layer switch
 #define LY_DFLT MO(_DEFAULT)
 #define LY_GAME TG(_GAME)
-#define LY_LOWR MO(_LOWER)
-#define LY_RAIS MO(_RAISE)
+#define LY_NAVI MO(_NAVI)
+#define LY_NUMB MO(_NUMBER)
 #define LY_SYMB MO(_SYMBOL)
 #define LY_MOUS MO(_MOUSE)
 #define LY_ADJT MO(_ADJUST)
 
 // Layer taps
-#define BSP_LWR LT(_LOWER, KC_BSPC)
-#define TAB_LWR LT(_LOWER, KC_TAB)
-#define SPC_RSE LT(_RAISE, KC_SPC)
+#define BSP_NAV LT(_NAVI, KC_BSPC)
+#define TAB_NAV LT(_NAVI, KC_TAB)
+#define SPC_SYM LT(_SYMBOL, KC_SPC)
 #define DEL_ADJ LT(_ADJUST, KC_DEL)
-#define ENT_SYM LT(_SYMBOL, KC_ENT)
+#define ENT_NUM LT(_NUMBER, KC_ENT)
+#define DEL_NUM LT(_NUMBER, KC_DEL)
 #define TAB_MSE LT(_MOUSE, KC_TAB)
 #define ESC_MED LT(_MEDIA, KC_ESC)
 
@@ -68,15 +69,18 @@ enum layer_names {
 #define CTL_X LCTL(KC_X)
 #define CTL_C LCTL(KC_C)
 #define CTL_V LCTL(KC_V)
-#define OSLSFT OSM(MOD_LSFT)
-#define OSRSFT OSM(MOD_RSFT)
-#define OSLCTL OSM(MOD_LCTL)
+#define OS_LSFT OSM(MOD_LSFT)
+#define OS_LCTL OSM(MOD_LCTL)
+#define OS_LALT OSM(MOD_LALT)
+#define OS_LGUI OSM(MOD_LGUI)
+#define OS_RSFT OSM(MOD_RSFT)
 #define DEL_HYP HYPR_T(KC_DEL)
 #define DEL_ALT LALT_T(KC_DEL)
 #define ESC_CTL LCTL_T(KC_ESC)
 #define ESC_GUI LGUI_T(KC_ESC)
 #define ESC_ALT LALT_T(KC_ESC)
 #define ENT_SFT LSFT_T(KC_ENT)
+#define TAB_SFT LSFT_T(KC_TAB)
 #define Z_CTL LCTL_T(KC_Z)
 #define SLS_CTL RCTL_T(KC_SLSH)
 #define CHTUNXT LSFT(LALT(KC_DOWN))

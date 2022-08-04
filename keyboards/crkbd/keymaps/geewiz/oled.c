@@ -50,11 +50,11 @@ static void render_status(void) {
             case _GAME:
                 oled_write_P(PSTR("GAME\n"), false);
                 break;
-            case _LOWER:
-                oled_write_P(PSTR("LOWER\n"), false);
+            case _NAVI:
+                oled_write_P(PSTR("NAVI\n"), false);
                 break;
-            case _RAISE:
-                oled_write_P(PSTR("RAISE\n"), false);
+            case _NUMBER:
+                oled_write_P(PSTR("NUMBER\n"), false);
                 break;
             case _SYMBOL:
                 oled_write_P(PSTR("SYMBOL\n"), false);
