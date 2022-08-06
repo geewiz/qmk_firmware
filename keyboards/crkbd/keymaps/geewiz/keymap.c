@@ -70,11 +70,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_SYMBOL] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      _______, KC_GRV , KC_AMPR, KC_ASTR, KC_MINS, XXXXXXX,                      XXXXXXX, KC_UNDS, XXXXXXX, XXXXXXX, KC_TILD, _______,\
+      _______, KC_GRV , KC_AMPR, KC_ASTR, KC_MINS, XXXXXXX,                      XXXXXXX, KC_UNDS, KC_LABK, KC_RABK, KC_TILD, _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       _______, KC_COLN, KC_DLR , KC_PERC, KC_CIRC, KC_EQL ,                      KC_PLUS, KC_LPRN, KC_LBRC, KC_LCBR, KC_SCLN, _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, KC_PIPE, KC_EXLM, KC_AT  , KC_HASH, KC_UNDS,                      XXXXXXX, KC_RPRN, KC_RBRC, KC_RCBR, KC_BSLS, _______,\
+      _______, KC_PIPE, KC_EXLM, KC_AT  , KC_HASH, XXXXXXX,                      XXXXXXX, KC_RPRN, KC_RBRC, KC_RCBR, KC_BSLS, _______,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           _______, _______, _______,    _______, _______, _______ \
                                       //`--------------------------'  `--------------------------'
