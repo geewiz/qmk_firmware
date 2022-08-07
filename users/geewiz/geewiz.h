@@ -27,13 +27,14 @@ enum layer_names {
 
 // Layer taps
 #define BSP_NAV LT(_NAVI, KC_BSPC)
-#define TAB_NAV LT(_NAVI, KC_TAB)
-#define SPC_SYM LT(_SYMBOL, KC_SPC)
 #define DEL_ADJ LT(_ADJUST, KC_DEL)
-#define ENT_NUM LT(_NUMBER, KC_ENT)
 #define DEL_NUM LT(_NUMBER, KC_DEL)
-#define TAB_MSE LT(_MOUSE, KC_TAB)
+#define ENT_ADJ LT(_ADJUST, KC_ENT)
+#define ENT_NUM LT(_NUMBER, KC_ENT)
 #define ESC_MED LT(_MEDIA, KC_ESC)
+#define SPC_SYM LT(_SYMBOL, KC_SPC)
+#define TAB_MSE LT(_MOUSE, KC_TAB)
+#define TAB_NAV LT(_NAVI, KC_TAB)
 
 // Default layer home row mods
 #if defined(GEEWIZ_COLEMAK)

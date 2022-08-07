@@ -2,25 +2,25 @@
 #pragma once
 
 // Configure the global tapping term (default: 200ms)
-#define TAPPING_TERM 300
+#define TAPPING_TERM 200
 // Special tapping term values for home row mods
-#undef TAPPING_TERM_PER_KEY
+#define TAPPING_TERM_PER_KEY
 // Prevent normal rollover on alphas from accidentally triggering mods.
 #define IGNORE_MOD_TAP_INTERRUPT
 // Allow holding a key as mod (not tap) after tapping it
 #define TAPPING_FORCE_HOLD
 // ...except a few special taps
 #define TAPPING_FORCE_HOLD_PER_KEY
-// Favour hold over tap
-#define PERMISSIVE_HOLD
-#define HOLD_ON_OTHER_KEY_PRESS
+// Do not favour hold over tap
+#undef PERMISSIVE_HOLD
+#undef HOLD_ON_OTHER_KEY_PRESS
 
 /* Key combos */
 #define COMBO_TERM 50
 #define COMBO_VARIABLE_LEN
 
 // Time (in ms) before one shot keys are released
-#define ONESHOT_TIMEOUT 5000
+#define ONESHOT_TIMEOUT 3000
 
 // Leader key
 #define LEADER_TIMEOUT 500
