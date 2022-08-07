@@ -1,5 +1,7 @@
 #pragma once
 
+#include "features/achordion.h"
+
 enum keycodes {
   DEFAULT = SAFE_RANGE,
   U_SMCL, // Smart caps lock
