@@ -2,6 +2,7 @@
 #include <stdbool.h>
 #include "geewiz.h"
 #include "smart_caps.h"
+#include "features/achordion.h"
 
 #ifdef COMBO_ENABLE
 #include "g/keymap_combo.h" // to make combo def dictionary work
@@ -27,26 +28,12 @@ void persistent_default_layer_set(uint16_t default_layer) {
 #ifdef TAPPING_TERM_PER_KEY
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-#  if defined(GEEWIZ_COLEMAK)
-        case DH_A:
-        case DH_R:
-        case DH_I:
-        case DH_O:
-            return TAPPING_TERM + 80;
-        case DH_T:
-        case DH_N:
-            return TAPPING_TERM - 50;
-#  else
+        // allow outer fingers to linger
         case DH_A:
         case DH_S:
         case DH_L:
-        case DH_SCLN:
         case DH_QUOT:
-            return TAPPING_TERM + 80;
-        case DH_F:
-        case DH_J:
-            return TAPPING_TERM - 50;
-#  endif
+            return TAPPING_TERM + 200;
         default:
             return TAPPING_TERM;
     }
@@ -57,6 +44,9 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case BSP_NAV:
+        case DH_J:
+        case DH_K:
+        case DH_L:
             return false;
         default:
             return true;
@@ -73,6 +63,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (record->event.pressed) { tap_timer = timer_read32(); }
 #endif
 
+  if (!process_achordion(keycode, record)) { return false; }
+
   switch (keycode) {
     case U_SMCL:
         if (record->event.pressed) return false;
@@ -80,9 +72,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         return false;
   }
 
-  if (!process_smart_caps(keycode, record)) {
-      return false;
-  }
+  if (!process_smart_caps(keycode, record)) { return false; }
 
   return true;
 };
