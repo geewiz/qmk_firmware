@@ -34,6 +34,9 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case DH_L:
         case DH_QUOT:
             return TAPPING_TERM + 200;
+        case DH_F:
+        case DH_J:
+            return TAPPING_TERM - 50;
         default:
             return TAPPING_TERM;
     }
@@ -44,7 +47,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case BSP_NAV:
-        case DH_J:
+        case DH_A:
         case DH_K:
         case DH_L:
             return false;
