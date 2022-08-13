@@ -14,8 +14,6 @@
   * along with this program.  If not, see <http://www.gnu.org/licenses/>.
   */
 
-// This is the personal keymap of Jochen Lillich (@geewiz).
-
 #include "keymap.h"
 
 // clang-format off
@@ -36,7 +34,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,--------------------------------------------.                  ,--------------------------------------------.
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    U_RDO  , U_PST  , U_CPY  , U_CUT  , U_UND  ,
   //|--------+--------+--------+--------+--------|                  |--------+--------+--------+--------+--------|
-      OS_LGUI, OS_LALT, OS_LCTL, OS_LSFT, KC_LGUI,                    KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, U_SMCL ,
+      KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                    KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, U_SMCL ,
   //|--------+--------+--------+--------+--------+--------.,--------+--------+--------+--------+--------+--------|
       KC_RGUI, KC_RALT, KC_RCTL, KC_RSFT, XXXXXXX, XXXXXXX,  XXXXXXX, KC_HOME, KC_PGDN, KC_PGUP, KC_END , KC_INS ,
   //|--------+--------+--------+--------+--------+--------||--------+--------+--------+--------+--------+--------|
