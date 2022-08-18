@@ -46,8 +46,8 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 #ifdef TAPPING_FORCE_HOLD_PER_KEY
 bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case BSP_NAV:
-        case DH_A:
+        // Auto-repeat vim nav keys
+        case DH_J:
         case DH_K:
         case DH_L:
             return false;
