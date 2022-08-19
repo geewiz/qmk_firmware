@@ -104,18 +104,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 // clang-format on
 
+// Exceptions for the opposite hands rule
 bool achordion_chord(uint16_t tap_hold_keycode,
                      keyrecord_t* tap_hold_record,
                      uint16_t other_keycode,
                      keyrecord_t* other_record) {
-  // Exceptions for the opposite hands rule
-  switch (tap_hold_keycode) {
-    case SPC_SYM:
-    case ENT_ADJ:
-      return true;
-      break;
-  }
-
   // Allow same-hand holds for thumb keys
   if (tap_hold_record->event.key.row >= 3) { return true; }
 
