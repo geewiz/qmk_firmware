@@ -50,6 +50,8 @@ bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
         case DH_J:
         case DH_K:
         case DH_L:
+        // Backspace
+        case BSP_NAV:
             return false;
         default:
             return true;
