@@ -129,21 +129,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   )
 };
 
+// Exceptions for the opposite hands rule
 bool achordion_chord(uint16_t tap_hold_keycode,
                      keyrecord_t* tap_hold_record,
                      uint16_t other_keycode,
                      keyrecord_t* other_record) {
-  // Exceptions for the opposite hands rule
-  switch (tap_hold_keycode) {
-    case SPC_SYM:
-    case ENT_ADJ:
-      return true;
-      break;
-  }
-
-  // Allow same-hand holds when the other key is in the rows below the
-  // alphas. Split keyboard requires `% (MATRIX_ROWS / 2)`.
-  if (other_record->event.key.row % (MATRIX_ROWS / 2) >= 3) { return true; }
+  // Allow same-hand holds for thumb keys
+  if (tap_hold_record->event.key.row >= 3) { return true; }
 
   // Otherwise, follow the opposite hands rule.
   return achordion_opposite_hands(tap_hold_record, other_record);
