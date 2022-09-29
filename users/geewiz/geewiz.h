@@ -9,23 +9,23 @@ enum keycodes {
 
 enum layer_names {
   _DEFAULT,
-  _GAME,
   _NAVI,
-  _NUMBER,
   _SYMBOL,
+  _NUMBER,
   _MOUSE,
   _MEDIA,
-  _ADJUST
+  _ADJUST,
+  _GAME
 };
 
 // Layer switch
 #define LY_DFLT MO(_DEFAULT)
-#define LY_GAME TG(_GAME)
 #define LY_NAVI MO(_NAVI)
 #define LY_NUMB MO(_NUMBER)
 #define LY_SYMB MO(_SYMBOL)
 #define LY_MOUS MO(_MOUSE)
 #define LY_ADJT MO(_ADJUST)
+#define LY_GAME TG(_GAME)
 
 // Layer taps
 #define BSP_NAV LT(_NAVI, KC_BSPC)
