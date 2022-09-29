@@ -119,10 +119,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 };
 
-layer_state_t layer_state_set_user(layer_state_t state) {
-   return update_tri_layer_state(state, _NAVI, _SYMBOL, _ADJUST);
-}
-
 // Exceptions for the opposite hands rule
 bool achordion_chord(uint16_t tap_hold_keycode,
                      keyrecord_t* tap_hold_record,

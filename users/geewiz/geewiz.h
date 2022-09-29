@@ -8,7 +8,7 @@ enum keycodes {
 };
 
 enum layer_names {
-  _DEFAULT,
+  _DEFAULT = 0,
   _NAVI,
   _SYMBOL,
   _NUMBER,
