@@ -30,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* |--------+--------+--------+--------+--------+--------|--------. .--------|--------+--------+--------+--------+--------+--------| */
      KC_LSFT, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , KC_MUTE,   KC_HOME, KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, KC_LEAD, \
 /* |--------+--------+--------+--------+--------+--------/-------/   \-------\--------+--------+--------+--------+--------+--------| */
-                              XXXXXXX, KC_ESC , KC_TAB , KC_SPC ,       ENT_ADJ, SPC_SYM, DEL_NUM, XXXXXXX \
+                              KC_ESC , KC_TAB , KC_LALT, KC_SPC ,       _______, _______, _______, KC_LGUI \
 /*                          |--------+--------+--------|--------/     \--------|--------+--------+--------|                          */
   ),
 
@@ -110,9 +110,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* |--------+--------+--------+--------+--------+--------|                   |--------+--------+--------+--------+--------+--------| */
      XXXXXXX, KC_F12 , KC_F7  , KC_F8  , KC_F9  , KC_PSCR,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT, XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------|                   |--------+--------+--------+--------+--------+--------| */
-     XXXXXXX, KC_F11 , KC_F4  , KC_F5  , KC_F6  , KC_SLCK,                     LY_GAME, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, XXXXXXX, \
+     XXXXXXX, KC_F11 , KC_F4  , KC_F5  , KC_F6  , KC_SLCK,                     TG_GAME, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------|--------. .--------|--------+--------+--------+--------+--------+--------| */
-     XXXXXXX, KC_F10 , KC_F1  , KC_F2  , KC_F3  , KC_PAUS, _______,   _______, LY_DFLT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
+     XXXXXXX, KC_F10 , KC_F1  , KC_F2  , KC_F3  , KC_PAUS, _______,   _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
 /* |--------+--------+--------+--------+--------+--------/-------/   \-------\--------+--------+--------+--------+--------+--------| */
                               _______, _______, _______, _______,       _______, _______, _______, _______ \
 /*                          |--------+--------+--------|--------/     \--------|--------+--------+--------|                          */
