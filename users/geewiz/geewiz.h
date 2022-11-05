@@ -26,6 +26,7 @@ enum layer_names {
 #define LY_ADJT MO(_ADJUST)
 #define LY_DFLT DF(_DEFAULT)
 #define LY_GAME DF(_GAME)
+#define TG_GAME TG(_GAME)
 
 // Layer taps
 #define BSP_NAV LT(_NAVI, KC_BSPC)
