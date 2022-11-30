@@ -15,6 +15,7 @@ enum layer_names {
   _NUMBER,
   _MOUSE,
   _MEDIA,
+  _DESKTOP,
   _ADJUST,
 };
 
@@ -27,6 +28,7 @@ enum layer_names {
 #define LY_DFLT DF(_DEFAULT)
 #define LY_GAME DF(_GAME)
 #define TG_GAME TG(_GAME)
+#define TG_DESK TG(_DESKTOP)
 
 // Layer taps
 #define BSP_NAV LT(_NAVI, KC_BSPC)
@@ -89,6 +91,12 @@ enum layer_names {
 #define SLS_CTL RCTL_T(KC_SLSH)
 #define CHTUNXT LSFT(LALT(KC_DOWN))
 #define CHTUPRV LSFT(LALT(KC_UP))
+#define DESK_1 LGUI(KC_1)
+#define DESK_2 LGUI(KC_2)
+#define DESK_3 LGUI(KC_3)
+#define DESK_4 LGUI(KC_4)
+#define DESK_5 LGUI(KC_5)
+#define DESK_6 LGUI(KC_6)
 
 // Dynamic macros
 #define MAC1 DYN_MACRO_PLAY1
