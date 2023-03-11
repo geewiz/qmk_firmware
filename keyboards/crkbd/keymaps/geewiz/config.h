@@ -33,9 +33,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endif
 
 #ifdef RGB_MATRIX_ENABLE
-#  define RGB_MATRIX_KEYPRESSES
 #  define RGB_DISABLE_WHEN_USB_SUSPENDED true
-#  define RGB_MATRIX_FRAMEBUFFER_EFFECTS
 #  define RGB_MATRIX_MAXIMUM_BRIGHTNESS 150
 #  define RGB_MATRIX_STARTUP_MODE RGB_MATRIX_ALPHAS_MODS
 #  define RGB_MATRIX_STARTUP_HUE 85
@@ -43,6 +41,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #  define RGB_MATRIX_STARTUP_VAL 50
 #  define RGB_MATRIX_STARTUP_SPD 201
 
+#  define RGB_MATRIX_KEYPRESSES
 #  define ENABLE_RGB_MATRIX_SOLID_COLOR
 #  define ENABLE_RGB_MATRIX_ALPHAS_MODS
 #  define ENABLE_RGB_MATRIX_BREATHING
