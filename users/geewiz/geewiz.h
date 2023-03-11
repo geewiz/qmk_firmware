@@ -3,7 +3,7 @@
 #include "features/achordion.h"
 
 enum keycodes {
-  DEFAULT = SAFE_RANGE,
+  DEFAULT = QK_USER,
   U_SMCL, // Smart caps lock
 };
 
