@@ -28,7 +28,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_SLSH, KC_7   , KC_8   , KC_9   , KC_ASTR, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   KC_0   , KC_4   , KC_5   , KC_6   , KC_MINS, _______, _______, XXXXXXX, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI,
   KC_DOT , KC_1   , KC_2   , KC_3   , KC_PLUS, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  _______, _______, _______, _______, KC_NO  , _______, KC_NO  , _______, _______, _______, _______, _______
+  _______, _______, KC_DOT , KC_0   , KC_NO  , _______, KC_NO  , _______, _______, _______, _______, _______
 ),
 
 [_MOUSE] = LAYOUT_planck_grid(
@@ -47,9 +47,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_ADJUST] = LAYOUT_planck_grid(
   KC_F12 , KC_F7  , KC_F8  , KC_F9  , KC_PSCR, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RESET  ,
-  KC_F11 , KC_F4  , KC_F5  , KC_F6  , KC_SLCK, _______, _______, XXXXXXX, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI,
+  KC_F11 , KC_F4  , KC_F5  , KC_F6  , KC_SCRL, _______, _______, XXXXXXX, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI,
   KC_F10 , KC_F1  , KC_F2  , KC_F3  , KC_PAUS, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  KC_MUTE, _______, _______, KC_BSPC, KC_NO  , KC_TAB , KC_NO  , _______, _______, _______, _______, _______
+  KC_MUTE, RESET  , _______, KC_BSPC, KC_NO  , KC_TAB , KC_NO  , _______, _______, _______, RESET  , _______
 ),
 };
 
@@ -63,7 +63,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
       clockwise ? tap_code(KC_VOLU) : tap_code(KC_VOLD);
       break;
     default:
-      clockwise ? tap_code(KC_PGDN) : tap_code(KC_PGUP);
+      clockwise ? tap_code(KC_WH_D) : tap_code(KC_WH_U);
       break;
   }
   return false;
