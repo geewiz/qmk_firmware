@@ -46,16 +46,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_ADJUST] = LAYOUT_planck_grid(
-  KC_F12 , KC_F7  , KC_F8  , KC_F9  , KC_PSCR, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RESET  ,
+  KC_F12 , KC_F7  , KC_F8  , KC_F9  , KC_PSCR, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT,
   KC_F11 , KC_F4  , KC_F5  , KC_F6  , KC_SCRL, _______, _______, XXXXXXX, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI,
   KC_F10 , KC_F1  , KC_F2  , KC_F3  , KC_PAUS, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  KC_MUTE, RESET  , _______, KC_BSPC, KC_NO  , KC_TAB , KC_NO  , _______, _______, _______, RESET  , _______
+  KC_MUTE, _______, QK_BOOT, KC_BSPC, KC_NO  , KC_TAB , KC_NO  , _______, _______, QK_BOOT, _______, _______
 ),
 };
 
 #ifdef ENCODER_ENABLE
 bool encoder_update_user(uint8_t index, bool clockwise) {
+  // Note that layer keys need achordion_timeout disabled below
   switch (get_highest_layer(layer_state)) {
+    case _SYMBOL:
+      clockwise ? tap_code(KC_PGDN) : tap_code(KC_PGUP);
+      break;
     case _NUMBER:
       clockwise ? tap_code16(C(KC_TAB)) : tap_code16(S(C(KC_TAB)));
       break;
@@ -85,6 +89,7 @@ bool achordion_chord(uint16_t tap_hold_keycode,
 uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
   switch (tap_hold_keycode) {
     // For the encoder layers, we need standard QMK hold behaviour
+    case SPC_SYM:
     case DEL_NUM:
     case ENT_ADJ:
       return 0;
