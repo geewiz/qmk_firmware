@@ -41,3 +41,6 @@
 #define AUTO_SHIFT_TIMEOUT TAPPING_TERM
 #define AUTO_SHIFT_NO_SETUP
 #endif
+
+// features/achordion
+//#define ACHORDION_ENABLE
