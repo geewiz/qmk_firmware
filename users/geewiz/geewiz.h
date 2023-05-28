@@ -1,6 +1,8 @@
 #pragma once
 
+#if defined(ACHORDION_ENABLE)
 #include "features/achordion.h"
+#endif
 
 enum keycodes {
   DEFAULT = QK_USER,

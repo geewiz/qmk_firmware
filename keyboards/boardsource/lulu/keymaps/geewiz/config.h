@@ -9,3 +9,5 @@
 #  define ENABLE_RGB_MATRIX_ALPHAS_MODS
 #  define ENABLE_RGB_MATRIX_BREATHING
 #endif
+
+#define ACHORDION_ENABLE // features/achordion

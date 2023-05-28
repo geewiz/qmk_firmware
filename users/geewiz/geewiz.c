@@ -2,7 +2,10 @@
 #include <stdbool.h>
 #include "geewiz.h"
 #include "smart_caps.h"
+
+#if defined(ACHORDION_ENABLE)
 #include "features/achordion.h"
+#endif
 
 #ifdef COMBO_ENABLE
 #include "g/keymap_combo.h" // to make combo def dictionary work
@@ -68,7 +71,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (record->event.pressed) { tap_timer = timer_read32(); }
 #endif
 
+#if defined(ACHORDION_ENABLE)
   if (!process_achordion(keycode, record)) { return false; }
+#endif
 
   switch (keycode) {
     case U_SMCL:
