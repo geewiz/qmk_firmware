@@ -4,15 +4,7 @@ SRC += $(USER_PATH)/features/achordion.c
 
 VPATH += keyboards/gboards/
 
-AUDIO_ENABLE = no           # Audio output on port C6
-COMBO_ENABLE = yes          # Key combos
-COMMAND_ENABLE = no         # Commands for debug and configuration
-CONSOLE_ENABLE = no         # Console for debug
 EXTRAKEY_ENABLE = yes       # Audio control and System control
-LEADER_ENABLE = no          # Leader key
-MIDI_ENABLE = no            # MIDI controls
-SWAP_HANDS_ENABLE = no      # Enable one-hand typing
-UNICODE_ENABLE = no         # Unicode
 MOUSEKEY_ENABLE = yes
 
 # Do not enable SLEEP_LED_ENABLE. it uses the same timer as BACKLIGHT_ENABLE
