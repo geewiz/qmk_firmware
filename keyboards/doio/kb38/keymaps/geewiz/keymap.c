@@ -26,11 +26,12 @@ enum layers {
 // DaVinci Resolve keycodes
 #define DV_RDEL KC_DEL
 #define DV_SPLIT C(KC_BSLS)
+#define DV_UNDO C(KC_Z)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_LAYERONE] = LAYOUT(
         // Default
-        TO(1),              KC_BSPC ,              KC_F10  , KC_F11  , KC_F13  ,    KC_F13 , KC_F14 , KC_F15 ,
+        TO(1),              KC_BSPC ,              KC_F10  , KC_F11  , KC_F12  ,    KC_F13 , KC_F14 , KC_F15 ,
         KC_NUM  , KC_PSLS , KC_PAST , KC_PMNS ,    KC_F7   , KC_F8   , KC_F9   ,
         KC_P7   , KC_P8   , KC_P9   , KC_PPLS ,    KC_F4   , KC_F5   , KC_F6   ,
         KC_P4   , KC_P5   , KC_P6   ,              KC_F1   , KC_F2   , KC_F3   ,
@@ -40,9 +41,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_LAYERTWO] = LAYOUT(
         // Davinci Resolve
-        TO(2),              KC_BSPC ,              KC_F10  , KC_F11  , KC_F13  ,    KC_F13 , KC_F14 , KC_F15 ,
-        KC_NUM  , KC_PSLS , KC_PAST , DV_RDEL ,    KC_F7   , KC_F8   , KC_F9   ,
-        KC_P7   , KC_P8   , KC_P9   , DV_SPLIT,    KC_F4   , KC_F5   , KC_F6   ,
+        TO(2),              DV_UNDO ,              KC_A    , KC_B    , KC_T    ,    KC_F13 , KC_F14 , KC_F15 ,
+        KC_NUM  , KC_PSLS , KC_PAST , DV_RDEL ,    KC_I    , KC_F8   , KC_O    ,
+        KC_P7   , KC_P8   , KC_P9   , DV_SPLIT,    KC_LCBR , KC_SLSH , KC_RCBR ,
         KC_P4   , KC_P5   , KC_P6   ,              KC_J    , KC_K    , KC_L    ,
         KC_P1   , KC_P2   , KC_P3   , KC_PENT ,              KC_UP   ,
         KC_P0   ,           KC_PDOT ,              KC_LEFT , KC_DOWN , KC_RGHT ,    KC_HOME, KC_END , KC_B
