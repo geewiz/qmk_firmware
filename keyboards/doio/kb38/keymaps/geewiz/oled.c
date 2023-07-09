@@ -14,13 +14,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* Graphical active layer and modifier status display. Module can be
-   rendered on primary OLED or without layer state on secondary.
-
-   Modified from @soundmonster's graphical status code
-   (keyboards/crkbd/keymaps/soundmonster)
-*/
-
 static void render_status(void) {
     // Host Keyboard Layer Status
     oled_write_P(PSTR("\n"), false);
