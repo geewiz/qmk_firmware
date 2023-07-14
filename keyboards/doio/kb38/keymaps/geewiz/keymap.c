@@ -29,9 +29,12 @@ enum layers {
 #endif
 
 // DaVinci Resolve keycodes
-#define DR_RDEL KC_DEL
+#define DR_RDEL  KC_DEL
 #define DR_SPLIT C(KC_BSLS)
-#define DR_UNDO C(KC_Z)
+#define DR_UNDO  C(KC_Z)
+#define DR_MEDIA S(KC_2)
+#define DR_EDIT  S(KC_4)
+#define DR_DLIVR  S(KC_8)
 
 // System keycodes
 #define WS_1 LGUI(KC_1)
@@ -58,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_LAYERTWO] = LAYOUT(
         // Davinci Resolve
-        TO(2),              DR_UNDO ,              KC_A    , KC_B    , KC_T    ,    KC_F13 , KC_F14 , KC_F15 ,
+        TO(2),              DR_UNDO ,              KC_A    , KC_B    , KC_T    ,    DR_MEDIA, DR_EDIT , DR_DLIVR,
         KC_NUM  , KC_PSLS , KC_PAST , DR_RDEL ,    KC_I    , KC_NO   , KC_O    ,
         KC_P7   , KC_P8   , KC_P9   , DR_SPLIT,    KC_LCBR , KC_SLSH , KC_RCBR ,
         KC_P4   , KC_P5   , KC_P6   ,              KC_J    , KC_K    , KC_L    ,
@@ -96,8 +99,8 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
     [_LAYERTWO] = {
         // Zoom out, zoom in
         ENCODER_CCW_CW(C(KC_MINS), C(KC_EQL)),
-        // Clip back, clip forward
-        ENCODER_CCW_CW(KC_UP, KC_DOWN),
+        // Frame back, frame forward
+        ENCODER_CCW_CW(KC_LEFT, KC_RGHT),
         // 1 s back, 1 s forward
         ENCODER_CCW_CW(S(KC_LEFT), S(KC_RGHT))
     },
