@@ -3,15 +3,6 @@
 
 // Configure the global tapping term (default: 200ms)
 #define TAPPING_TERM 180
-// Special tapping term values for home row mods
-#define TAPPING_TERM_PER_KEY
-// Allow holding a key as mod (not tap) after tapping it
-#define TAPPING_FORCE_HOLD
-// ...except a few special taps
-#define TAPPING_FORCE_HOLD_PER_KEY
-// Do not favour hold over tap
-#undef PERMISSIVE_HOLD
-#undef HOLD_ON_OTHER_KEY_PRESS
 
 /* Key combos */
 #define COMBO_TERM 50
@@ -39,6 +30,3 @@
 #define AUTO_SHIFT_TIMEOUT TAPPING_TERM
 #define AUTO_SHIFT_NO_SETUP
 #endif
-
-// features/achordion
-//#define ACHORDION_ENABLE
