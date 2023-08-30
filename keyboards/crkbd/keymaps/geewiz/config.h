@@ -23,6 +23,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define EE_HANDS
 #define SPLIT_USB_DETECT
 
+// Special tapping term values for home row mods
+#define TAPPING_TERM_PER_KEY
+// Allow holding a key as mod (not tap) after tapping it
+#define TAPPING_FORCE_HOLD
+// ...except a few special taps
+#define TAPPING_FORCE_HOLD_PER_KEY
+// Do not favour hold over tap
+#undef PERMISSIVE_HOLD
+#undef HOLD_ON_OTHER_KEY_PRESS
+
 #define ACHORDION_ENABLE // features/achordion
 
 #ifdef OLED_ENABLE
