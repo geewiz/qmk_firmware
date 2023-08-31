@@ -27,6 +27,7 @@ enum layer_names {
 #define LY_SYMB MO(_SYMBOL)
 #define LY_MOUS MO(_MOUSE)
 #define LY_ADJT MO(_ADJUST)
+#define LY_DESK MO(_DESKTOP)
 #define LY_DFLT DF(_DEFAULT)
 #define LY_GAME DF(_GAME)
 #define TG_GAME TG(_GAME)
@@ -99,6 +100,10 @@ enum layer_names {
 #define DESK_4 LGUI(KC_4)
 #define DESK_5 LGUI(KC_5)
 #define DESK_6 LGUI(KC_6)
+#define DESK_7 LGUI(KC_7)
+#define DESK_8 LGUI(KC_8)
+#define DESK_9 LGUI(KC_9)
+#define DESK_0 LGUI(KC_0)
 
 // Dynamic macros
 #define MAC1 DYN_MACRO_PLAY1
