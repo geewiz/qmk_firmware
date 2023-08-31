@@ -62,6 +62,9 @@ static void render_status(void) {
             case _MEDIA:
                 oled_write_P(PSTR("MEDIA\n"), false);
                 break;
+            case _MOUSE:
+                oled_write_P(PSTR("MOUSE\n"), false);
+                break;
             case _ADJUST:
                 oled_write_P(PSTR("ADJUST\n"), false);
                 break;
