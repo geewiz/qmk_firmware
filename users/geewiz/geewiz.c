@@ -7,10 +7,6 @@
 #include "features/achordion.h"
 #endif
 
-#ifdef COMBO_ENABLE
-#include "g/keymap_combo.h" // to make combo def dictionary work
-#endif
-
 #ifdef OLED_ENABLE
 uint32_t tap_timer = 0; // Initialize timer for OLED animation
 #endif

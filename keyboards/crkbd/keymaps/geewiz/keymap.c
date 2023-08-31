@@ -22,6 +22,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 extern uint8_t is_master;
 
+#ifdef COMBO_ENABLE
+#include "g/keymap_combo.h" // to make combo def dictionary work
+#endif
+
 #ifdef OLED_ENABLE
 #include "oled.c"
 #endif
@@ -58,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_NAVI] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      U_RDO  , U_PST  , U_CPY  , U_CUT  , U_UND  , _______,\
+      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_AGIN, KC_PSTE, KC_COPY, KC_CUT , KC_UNDO, _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_LGUI,                      KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, U_SMCL , _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -143,11 +147,14 @@ bool achordion_chord(uint16_t tap_hold_keycode,
 
 uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
   switch (tap_hold_keycode) {
-    // For the encoder layers, we need standard QMK hold behaviour
-    case DEL_NUM:
+    case ESC_MED:
+    case BSP_NAV:
+    case TAB_MSE:
     case ENT_ADJ:
+    case SPC_SYM:
+    case DEL_NUM:
       return 0;
   }
 
-  return 800;  // Otherwise use a reasonable timeout
+  return 800;
 }
