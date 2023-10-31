@@ -1,9 +1,6 @@
 // Custom config settings for @geewiz
 #pragma once
 
-// Configure the global tapping term (default: 200ms)
-#define TAPPING_TERM 180
-
 /* Key combos */
 #define COMBO_TERM 50
 #define COMBO_VARIABLE_LEN
