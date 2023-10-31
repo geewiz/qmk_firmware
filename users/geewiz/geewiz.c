@@ -27,15 +27,16 @@ void persistent_default_layer_set(uint16_t default_layer) {
 #ifdef TAPPING_TERM_PER_KEY
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        // allow outer fingers to linger
+        // outer home row
         case DH_A:
         case DH_S:
         case DH_L:
         case DH_QUOT:
-            return TAPPING_TERM + 200;
+            return TAPPING_TERM;
+        // inner home row
         case DH_F:
         case DH_J:
-            return TAPPING_TERM - 50;
+            return TAPPING_TERM;
         default:
             return TAPPING_TERM;
     }
