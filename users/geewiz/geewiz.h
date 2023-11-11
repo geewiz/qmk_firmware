@@ -73,6 +73,12 @@ enum layer_names {
 #define U_CUT LCTL(KC_X)
 #define U_UND LCTL(KC_Z)
 
+// EURkey umlaut combinations
+#define U_UMLAE RALT(KC_A)
+#define U_UMLOE RALT(KC_O)
+#define U_UMLUE RALT(KC_U)
+#define U_UMLSS RALT(KC_S)
+
 // One-shot modifiers
 #define OS_LSFT OSM(MOD_LSFT)
 #define OS_LCTL OSM(MOD_LCTL)
