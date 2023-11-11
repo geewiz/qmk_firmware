@@ -3,7 +3,7 @@
 #include "geewiz.h"
 #include "smart_caps.h"
 
-#if defined(ACHORDION_ENABLE)
+#ifdef ACHORDION_ENABLE
 #include "features/achordion.h"
 #endif
 
@@ -68,7 +68,7 @@ LEADER_EXTERNS();
 #endif
 
 void matrix_scan_user(void) {
-#if defined(ACHORDION_ENABLE)
+#ifdef ACHORDION_ENABLE
     achordion_task();
 #endif
 
@@ -96,7 +96,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (record->event.pressed) { tap_timer = timer_read32(); }
 #endif
 
-#if defined(ACHORDION_ENABLE)
+#ifdef ACHORDION_ENABLE
   if (!process_achordion(keycode, record)) { return false; }
 #endif
 

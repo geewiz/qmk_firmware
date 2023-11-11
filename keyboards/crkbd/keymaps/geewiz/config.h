@@ -23,16 +23,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define EE_HANDS
 #define SPLIT_USB_DETECT
 
-#define TAPPING_TERM 200
-#define QUICK_TAP_TERM 100
-#define TAPPING_TERM_PER_KEY
-#define TAPPING_FORCE_HOLD
-#define TAPPING_FORCE_HOLD_PER_KEY
-#define PERMISSIVE_HOLD
-#undef HOLD_ON_OTHER_KEY_PRESS
-
-#define ACHORDION_ENABLE // features/achordion
-
 #ifdef OLED_ENABLE
 #    define SPLIT_OLED_ENABLE
 #    define OLED_TIMEOUT 10000
