@@ -7,6 +7,8 @@
 #include "features/achordion.h"
 #endif
 
+#include "users/callum/swapper.h"
+
 #ifdef OLED_ENABLE
 uint32_t tap_timer = 0; // Initialize timer for OLED animation
 #endif
@@ -91,6 +93,8 @@ void matrix_scan_user(void) {
 #endif
 }
 
+bool sw_win_active = false;
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #ifdef OLED_ENABLE // Reset typing timer for OLED animation
   if (record->event.pressed) { tap_timer = timer_read32(); }
@@ -99,6 +103,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #ifdef ACHORDION_ENABLE
   if (!process_achordion(keycode, record)) { return false; }
 #endif
+
+  update_swapper( &sw_win_active, KC_LALT, KC_TAB, SW_WIN, keycode, record);
 
   switch (keycode) {
     case U_SMCL:
