@@ -26,6 +26,8 @@ extern uint8_t is_master;
 #include "g/keymap_combo.h" // to make combo def dictionary work
 #endif
 
+#include "users/callum/swapper.h"
+
 #ifdef OLED_ENABLE
 #include "oled.c"
 #endif
@@ -44,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       U_UMLOE, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   ,                      KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, KC_MINS,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          LY_NAVI, KC_LSFT, TAB_MSE,    ENT_NUM, KC_SPC , LY_SYMB \
+                                          LY_NAVI, KC_LSFT, TAB_MSE,    ENT_MED, KC_SPC , LY_SYMB \
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -62,11 +64,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_NAVI] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      _______, OS_RGUI, OS_RALT, OS_RCTL, OS_RSFT, XXXXXXX,                      CW_TOGG, U_PST  , U_CPY  , U_CUT  , U_UND  , _______,\
+      _______, OS_RGUI, OS_RALT, OS_RCTL, OS_RSFT, KC_RGUI,                      CW_TOGG, U_PST  , U_CPY  , U_CUT  , U_UND  , _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       _______, OS_LGUI, OS_LALT, OS_LCTL, OS_LSFT, KC_LGUI,                      KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, KC_ENT , _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, KC_ESC , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_HOME, KC_PGDN, KC_PGUP, KC_END , KC_INS , _______,\
+      _______, KC_ESC , XXXXXXX, XXXXXXX, SW_WIN , XXXXXXX,                      KC_HOME, KC_PGDN, KC_PGUP, KC_END , KC_INS , _______,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           _______, XXXXXXX, XXXXXXX,    XXXXXXX, KC_BSPC, LY_NUMB \
                                       //`--------------------------'  `--------------------------'
@@ -112,9 +114,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      RGB_TOG, RGB_MOD, RGB_HUI, RGB_SAI, RGB_VAI, RGB_SPI,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                      KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, XXXXXXX, XXXXXXX,\
+      XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                      XXXXXXX, KC_MPLY, KC_MSTP, KC_MPRV, KC_MNXT, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           _______, _______, _______,    _______, _______, _______ \
                                       //`--------------------------'  `--------------------------'

@@ -7,6 +7,7 @@
 enum keycodes {
   DEFAULT = QK_USER,
   U_SMCL, // Smart caps lock
+  SW_WIN, // Switch windows
 };
 
 enum layer_names {
@@ -39,6 +40,7 @@ enum layer_names {
 #define DEL_NUM LT(_NUMBER, KC_DEL)
 #define ENT_ADJ LT(_ADJUST, KC_ENT)
 #define ENT_NUM LT(_NUMBER, KC_ENT)
+#define ENT_MED LT(_MEDIA, KC_ENT)
 #define ESC_MED LT(_MEDIA, KC_ESC)
 #define ESC_NAV LT(_NAVI , KC_ESC)
 #define SPC_SYM LT(_SYMBOL, KC_SPC)

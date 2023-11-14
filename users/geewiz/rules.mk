@@ -1,6 +1,7 @@
 SRC += $(USER_PATH)/geewiz.c
 SRC += $(USER_PATH)/smart_caps.c
 SRC += $(USER_PATH)/features/achordion.c
+SRC += users/callum/swapper.c
 
 VPATH += keyboards/gboards/
 
