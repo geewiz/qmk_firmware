@@ -64,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_NAVI] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      _______, OS_RGUI, OS_RALT, OS_RCTL, OS_RSFT, KC_RGUI,                      CW_TOGG, KC_ESC , SW_WIN , XXXXXXX, XXXXXXX, _______,\
+      _______, OS_RGUI, OS_RALT, OS_RCTL, OS_RSFT, KC_RGUI,                      KC_TAB , KC_ESC , SW_WIN , XXXXXXX, CW_TOGG, _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       _______, OS_LGUI, OS_LALT, OS_LCTL, OS_LSFT, KC_LGUI,                      KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, KC_ENT , _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -78,9 +78,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       _______, KC_EXLM, KC_AT  , KC_HASH, KC_DLR , KC_PERC,                      KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, KC_COLN, XXXXXXX, XXXXXXX, KC_MINS, KC_EQL ,                      KC_PLUS, KC_LPRN, KC_LBRC, KC_LCBR, KC_SCLN, _______,\
+      _______, XXXXXXX, KC_LCBR, KC_LBRC, KC_LPRN, KC_EQL ,                      KC_PLUS, KC_MINS, XXXXXXX, XXXXXXX, XXXXXXX, _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, KC_PIPE, XXXXXXX, XXXXXXX, KC_UNDS, XXXXXXX,                      XXXXXXX, KC_RPRN, KC_RBRC, KC_RCBR, KC_BSLS, _______,\
+      _______, KC_PIPE, KC_RCBR, KC_RBRC, KC_RPRN, XXXXXXX,                      XXXXXXX, KC_UNDS, KC_SCLN, KC_COLN, KC_BSLS, _______,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           LY_NUMB, LY_ADJT, XXXXXXX,    XXXXXXX, XXXXXXX, _______ \
                                       //`--------------------------'  `--------------------------'
