@@ -36,6 +36,7 @@ enum layer_names {
 
 // Layer taps
 #define BSP_NAV LT(_NAVI, KC_BSPC)
+#define BSP_SYM LT(_SYMBOL, KC_BSPC)
 #define DEL_ADJ LT(_ADJUST, KC_DEL)
 #define DEL_NUM LT(_NUMBER, KC_DEL)
 #define ENT_ADJ LT(_ADJUST, KC_ENT)
