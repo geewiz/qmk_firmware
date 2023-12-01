@@ -4,6 +4,9 @@
 #include "features/achordion.h"
 #endif
 
+#include "features/swapper.h"
+#include "features/smart_caps.h"
+
 enum keycodes {
   DEFAULT = QK_USER,
   U_SMCL, // Smart caps lock

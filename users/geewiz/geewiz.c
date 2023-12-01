@@ -1,13 +1,6 @@
 #include QMK_KEYBOARD_H
 #include <stdbool.h>
 #include "geewiz.h"
-#include "smart_caps.h"
-
-#ifdef ACHORDION_ENABLE
-#include "features/achordion.h"
-#endif
-
-#include "users/callum/swapper.h"
 
 #ifdef OLED_ENABLE
 uint32_t tap_timer = 0; // Initialize timer for OLED animation
