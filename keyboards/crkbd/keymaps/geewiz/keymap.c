@@ -26,8 +26,6 @@ extern uint8_t is_master;
 #include "g/keymap_combo.h" // to make combo def dictionary work
 #endif
 
-#include "users/callum/swapper.h"
-
 #ifdef OLED_ENABLE
 #include "oled.c"
 #endif
@@ -135,7 +133,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   )
 };
 
-#ifdef ACHORDION_ENABLE
+#ifdef ACHORDION_ENBLE
 // Exceptions for the opposite hands rule
 bool achordion_chord(uint16_t tap_hold_keycode,
                      keyrecord_t* tap_hold_record,
