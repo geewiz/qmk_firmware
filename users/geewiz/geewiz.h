@@ -23,14 +23,15 @@ enum layer_names {
 };
 
 // Layer switch
-#define LY_NAVI MO(_NAVI)
-#define LY_NUMB MO(_NUMBER)
-#define LY_SYMB MO(_SYMBOL)
-#define LY_MOUS MO(_MOUSE)
-#define LY_ADJT MO(_ADJUST)
-#define LY_DESK MO(_DESKTOP)
 #define LY_DFLT DF(_DEFAULT)
 #define LY_GAME DF(_GAME)
+#define LY_NAVI MO(_NAVI)
+#define LY_SYMB MO(_SYMBOL)
+#define LY_NUMB MO(_NUMBER)
+#define LY_MOUS MO(_MOUSE)
+#define LY_MEDI MO(_MEDIA)
+#define LY_DESK MO(_DESKTOP)
+#define LY_ADJT MO(_ADJUST)
 #define TG_GAME TG(_GAME)
 #define TG_DESK TG(_DESKTOP)
 
